@@ -9,28 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50:  "#f0f0ff",
-          100: "#e4e4ff",
-          200: "#ccccff",
-          300: "#a8a8fc",
-          400: "#8080f8",
-          500: "#6257f2",
-          600: "#5139e6",
-          700: "#4229cc",
-          800: "#3621a6",
-          900: "#2e1d84",
-          950: "#1c1054",
+        navy: {
+          DEFAULT: "#1a2744",
+          deep: "#0f1a2e",
+          light: "#243352",
         },
-        dark: "#0D0B1E",
-        surface: "#F7F7FB",
+        orange: {
+          DEFAULT: "#e8862a",
+          light: "#f5a54b",
+        },
+        blue: {
+          DEFAULT: "#4ba3c7",
+          light: "#6dc0df",
+        },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-sora)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Manrope", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Lora", "Georgia", "serif"],
       },
       borderRadius: {
-        "4xl": "2rem",
+        pill: "100px",
       },
     },
   },
