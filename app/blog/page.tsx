@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, Tag, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { getBlogPosts, getAllCategories, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Stratégie de contenu B2B",
+  title: "Blog LinkedIn B2B — Conseils Ghostwriting & Personal Branding",
   description:
-    "Expertise, tendances et conseils pratiques pour votre stratégie de contenu B2B. Articles rédigés par les experts Owrites.",
+    "Stratégie LinkedIn, ghostwriting B2B, personal branding et génération de leads. Conseils pratiques pour fondateurs et consultants francophones.",
 };
 
 export default function BlogPage({
@@ -22,37 +22,51 @@ export default function BlogPage({
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="section-py bg-gradient-to-b from-gray-50 to-white text-center">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <span className="inline-block rounded-full bg-brand-50 border border-brand-200 px-3 py-1 text-xs font-medium text-brand-700 mb-4">
+      <section
+        className="section-py text-center px-4"
+        style={{ backgroundColor: "var(--navy)" }}
+      >
+        <div className="max-w-2xl mx-auto">
+          <span className="section-tag mx-auto justify-center" style={{ color: "var(--orange)" }}>
             Blog & Ressources
           </span>
-          <h1 className="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-5">
-            Insights pour votre{" "}
-            <span className="text-gradient">stratégie de contenu B2B</span>
+          <h1
+            className="text-4xl sm:text-5xl font-serif font-bold text-white mt-2 mb-4"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            LinkedIn B2B :{" "}
+            <em style={{ color: "var(--orange-light)", fontStyle: "italic" }}>
+              conseils & stratégies
+            </em>
           </h1>
-          <p className="text-lg text-gray-500">
-            Stratégie, SEO, IA, copywriting — tout ce qu&apos;il faut savoir pour faire
-            du contenu un moteur de croissance.
+          <p className="text-lg text-white/70">
+            Ghostwriting, personal branding, génération de leads — tout ce qu&apos;il faut savoir pour faire de LinkedIn votre canal d&apos;acquisition.
           </p>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Featured post */}
         {featured && !activeCategory && (
           <Link
             href={`/blog/${featured.slug}`}
-            className="group block rounded-2xl overflow-hidden border border-gray-100 hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/30 transition-all mb-14"
+            className="group block rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all mb-14"
           >
             <div
-              className={`h-56 lg:h-72 bg-gradient-to-br ${featured.coverColor} flex items-end p-8`}
+              className={`h-56 lg:h-64 bg-gradient-to-br ${featured.coverColor} flex items-end p-8 relative overflow-hidden`}
+              style={{ background: `linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)` }}
             >
-              <div>
-                <span className="inline-block rounded-full bg-white/20 text-white text-xs font-medium px-3 py-1 mb-3">
+              <div className="relative z-10">
+                <span
+                  className="inline-block rounded-full px-3 py-1 text-xs font-semibold mb-3 text-white"
+                  style={{ backgroundColor: "var(--orange)" }}
+                >
                   {featured.category}
                 </span>
-                <h2 className="text-2xl lg:text-3xl font-display font-bold text-white leading-tight max-w-2xl group-hover:underline">
+                <h2
+                  className="text-2xl lg:text-3xl font-serif font-bold text-white leading-tight max-w-2xl"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
                   {featured.title}
                 </h2>
               </div>
@@ -69,7 +83,10 @@ export default function BlogPage({
                   <span>{featured.author.name}</span>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-600 whitespace-nowrap">
+              <span
+                className="inline-flex items-center gap-1.5 text-sm font-semibold whitespace-nowrap"
+                style={{ color: "var(--orange)" }}
+              >
                 Lire l&apos;article <ArrowRight size={14} />
               </span>
             </div>
@@ -80,11 +97,12 @@ export default function BlogPage({
         <div className="flex flex-wrap gap-2 mb-10">
           <Link
             href="/blog"
-            className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
+            className="rounded-full px-4 py-1.5 text-xs font-semibold transition-colors"
+            style={
               !activeCategory
-                ? "bg-brand-600 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-            }`}
+                ? { backgroundColor: "var(--orange)", color: "#fff" }
+                : { backgroundColor: "#f3f4f6", color: "#4b5563" }
+            }
           >
             Tous les articles
           </Link>
@@ -92,11 +110,12 @@ export default function BlogPage({
             <Link
               key={cat}
               href={`/blog?category=${encodeURIComponent(cat)}`}
-              className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
+              className="rounded-full px-4 py-1.5 text-xs font-semibold transition-colors"
+              style={
                 activeCategory === cat
-                  ? "bg-brand-600 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                  ? { backgroundColor: "var(--orange)", color: "#fff" }
+                  : { backgroundColor: "#f3f4f6", color: "#4b5563" }
+              }
             >
               {cat}
             </Link>
@@ -109,31 +128,40 @@ export default function BlogPage({
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col rounded-2xl border border-gray-100 overflow-hidden hover:border-brand-200 hover:shadow-lg hover:shadow-brand-100/30 transition-all"
+              className="group flex flex-col rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all"
             >
               {/* Cover */}
               <div
-                className={`h-44 bg-gradient-to-br ${post.coverColor} flex items-center justify-center`}
+                className="h-44 flex items-center justify-center relative overflow-hidden"
+                style={{ background: "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)" }}
               >
-                <span className="text-white/20 text-7xl font-display font-bold">
+                <span
+                  className="text-7xl font-serif font-bold opacity-20 text-white"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
                   {post.category.charAt(0)}
+                </span>
+                <span
+                  className="absolute bottom-3 left-4 text-xs font-semibold px-2.5 py-1 rounded-full text-white"
+                  style={{ backgroundColor: "var(--orange)" }}
+                >
+                  {post.category}
                 </span>
               </div>
 
               {/* Content */}
               <div className="flex-1 p-5 flex flex-col bg-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="inline-flex items-center gap-1 text-xs text-brand-600 font-medium">
-                    <Tag size={11} />
-                    {post.category}
-                  </span>
                   <span className="inline-flex items-center gap-1 text-xs text-gray-400">
                     <Clock size={11} />
                     {post.readTime}
                   </span>
                 </div>
 
-                <h3 className="text-base font-semibold font-display text-gray-900 mb-2 group-hover:text-brand-600 transition-colors leading-snug">
+                <h3
+                  className="text-base font-serif font-semibold mb-2 leading-snug group-hover:text-orange transition-colors"
+                  style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+                >
                   {post.title}
                 </h3>
 
@@ -144,7 +172,8 @@ export default function BlogPage({
                 <div className="mt-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div
-                      className={`w-6 h-6 rounded-full ${post.author.color} flex items-center justify-center text-white text-xs font-bold`}
+                      className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                      style={{ backgroundColor: "var(--orange)" }}
                     >
                       {post.author.initials.charAt(0)}
                     </div>
@@ -159,17 +188,20 @@ export default function BlogPage({
           ))}
         </div>
 
-        {/* AI Agent note */}
-        <div className="mt-14 rounded-2xl bg-gradient-to-r from-brand-50 to-purple-50 border border-brand-100 p-6 text-center">
-          <p className="text-sm text-gray-600 mb-1">
-            Ce blog est alimenté par notre agent IA éditorial.
+        {/* CTA note */}
+        <div
+          className="mt-14 rounded-2xl p-6 text-center border"
+          style={{ backgroundColor: "var(--orange-glow)", borderColor: "var(--orange)22" }}
+        >
+          <p className="text-sm font-semibold mb-1" style={{ color: "var(--navy)" }}>
+            Vous voulez des conseils personnalisés pour votre LinkedIn ?
           </p>
-          <p className="text-xs text-gray-400">
-            Nouveaux articles chaque semaine · Optimisés SEO · Rédigés par des experts ·{" "}
-            <Link href="/services#ai-agent" className="text-brand-600 hover:underline">
-              En savoir plus sur notre agent IA →
-            </Link>
+          <p className="text-xs text-gray-500 mb-4">
+            Réservez un appel gratuit — on analyse votre profil et on vous donne un plan d&apos;action concret.
           </p>
+          <Link href="/contact" className="btn-primary text-sm">
+            Réserver un appel →
+          </Link>
         </div>
       </div>
     </div>

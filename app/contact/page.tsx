@@ -1,34 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Calendar, CheckCircle2 } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "bonjour@owrites.com",
-    href: "mailto:bonjour@owrites.com",
-  },
-  {
-    icon: Phone,
-    label: "Téléphone",
-    value: "+32 2 123 45 67",
-    href: "tel:+3221234567",
-  },
-  {
-    icon: MapPin,
-    label: "Adresse",
-    value: "Bruxelles, Belgique",
-    href: null,
-  },
-  {
-    icon: Calendar,
-    label: "Réserver un appel",
-    value: "Calendly (30 min)",
-    href: "#demo",
-  },
-];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -37,103 +9,113 @@ export default function ContactPage() {
     company: "",
     email: "",
     phone: "",
-    budget: "",
+    service: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production: send to API or form service
     setSubmitted(true);
   };
+
+  const inputClass = "w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none transition focus:ring-2 bg-white"
 
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="section-py bg-gradient-to-b from-gray-50 to-white text-center">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <span className="inline-block rounded-full bg-brand-50 border border-brand-200 px-3 py-1 text-xs font-medium text-brand-700 mb-4">
-            Contact
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-display font-bold text-gray-900 mb-5">
-            Parlons de votre{" "}
-            <span className="text-gradient">stratégie de contenu</span>
+      <section
+        className="section-py text-center px-4"
+        style={{ background: "linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%)" }}
+      >
+        <div className="max-w-2xl mx-auto">
+          <h1
+            className="text-4xl sm:text-5xl font-serif font-bold text-white mb-4"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Parlons de votre LinkedIn
           </h1>
-          <p className="text-lg text-gray-500">
-            Réponse garantie en moins de 24h ouvrées. Appel stratégique gratuit
-            offert pour tout nouveau projet.
+          <p className="text-lg text-white/85">
+            Réservez un appel gratuit de 30 minutes. On analyse votre situation et on définit ensemble la stratégie qui vous correspond.
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="pb-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Info sidebar */}
             <div className="lg:col-span-2">
-              <h2 className="text-lg font-display font-semibold text-gray-900 mb-6">
-                Informations de contact
+              <h2
+                className="text-lg font-bold mb-6"
+                style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+              >
+                Pourquoi réserver un appel ?
               </h2>
-              <div className="space-y-4 mb-10">
-                {contactInfo.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.label} className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
-                        <Icon size={16} />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-400 mb-0.5">{item.label}</p>
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            className="text-sm font-medium text-gray-800 hover:text-brand-600 transition-colors"
-                          >
-                            {item.value}
-                          </a>
-                        ) : (
-                          <p className="text-sm font-medium text-gray-800">{item.value}</p>
-                        )}
-                      </div>
+
+              <div className="space-y-4 mb-8">
+                {[
+                  { icon: "🎯", title: "Diagnostic LinkedIn offert", desc: "On analyse votre profil et vos derniers posts en direct." },
+                  { icon: "💡", title: "Stratégie personnalisée", desc: "On vous donne des recommandations concrètes, sans engagement." },
+                  { icon: "⏱", title: "30 min, pas plus", desc: "Appel structuré, on va droit au but." },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <span className="text-xl">{item.icon}</span>
+                    <div>
+                      <p className="text-sm font-semibold" style={{ color: "var(--navy)" }}>{item.title}</p>
+                      <p className="text-xs text-gray-500">{item.desc}</p>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
 
-              {/* Demo CTA */}
+              {/* CTA card */}
               <div
+                className="rounded-2xl p-6"
                 id="demo"
-                className="rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700 p-6 text-white"
+                style={{ backgroundColor: "var(--navy)" }}
               >
-                <Calendar size={24} className="mb-3 text-brand-200" />
-                <h3 className="text-base font-semibold mb-2">
-                  Réserver une démo gratuite
-                </h3>
-                <p className="text-sm text-brand-100 mb-4">
-                  30 minutes pour vous présenter la plateforme et définir votre
-                  stratégie de contenu B2B.
+                <p
+                  className="text-sm font-bold text-white mb-2"
+                  style={{ color: "var(--orange-light)" }}
+                >
+                  📅 Réservez directement
+                </p>
+                <p className="text-xs text-white/60 mb-4">
+                  Appel de 30 min · 100% gratuit · Sans engagement
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center w-full rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-50 transition-colors"
+                  className="btn-primary w-full justify-center text-sm"
                 >
                   Choisir un créneau →
                 </a>
+              </div>
+
+              <div className="mt-6 space-y-3">
+                <a href="mailto:bonjour@owrites.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange transition-colors">
+                  <span>✉</span> bonjour@owrites.com
+                </a>
+                <p className="text-xs text-gray-400">Réponse garantie en moins de 24h ouvrées</p>
               </div>
             </div>
 
             {/* Form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="rounded-2xl border border-green-200 bg-green-50 p-10 text-center">
-                  <CheckCircle2 size={48} className="text-green-500 mx-auto mb-4" />
-                  <h2 className="text-xl font-display font-semibold text-gray-900 mb-2">
-                    Message envoyé !
+                <div
+                  className="rounded-2xl border p-12 text-center"
+                  style={{ borderColor: "var(--orange)", backgroundColor: "var(--orange-glow)" }}
+                >
+                  <div className="text-5xl mb-4">🎉</div>
+                  <h2
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+                  >
+                    Message reçu !
                   </h2>
-                  <p className="text-gray-500 text-sm">
-                    Merci pour votre message. Notre équipe vous répondra dans les
-                    24 heures ouvrées.
+                  <p className="text-gray-600 text-sm">
+                    Merci pour votre message. Notre équipe vous répondra dans les 24 heures ouvrées.
                   </p>
                 </div>
               ) : (
@@ -141,13 +123,16 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm space-y-5"
                 >
-                  <h2 className="text-lg font-display font-semibold text-gray-900 mb-2">
+                  <h2
+                    className="text-lg font-bold mb-2"
+                    style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+                  >
                     Envoyez-nous un message
                   </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
                         Prénom & Nom *
                       </label>
                       <input
@@ -156,11 +141,12 @@ export default function ContactPage() {
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Marie Dupont"
-                        className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition"
+                        className={inputClass}
+                        style={{ "--tw-ring-color": "var(--orange)" } as React.CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
                         Entreprise *
                       </label>
                       <input
@@ -168,15 +154,15 @@ export default function ContactPage() {
                         required
                         value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
-                        placeholder="Acme SA"
-                        className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition"
+                        placeholder="Acme SAS"
+                        className={inputClass}
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
                         Email professionnel *
                       </label>
                       <input
@@ -185,64 +171,66 @@ export default function ContactPage() {
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="marie@acme.com"
-                        className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition"
+                        className={inputClass}
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
                         Téléphone
                       </label>
                       <input
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        placeholder="+32 4xx xx xx xx"
-                        className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition"
+                        placeholder="+33 6 xx xx xx xx"
+                        className={inputClass}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1.5">
-                      Budget mensuel estimé
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                      Service qui vous intéresse
                     </label>
                     <select
-                      value={form.budget}
-                      onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition bg-white"
+                      value={form.service}
+                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      className={inputClass}
                     >
                       <option value="">Sélectionner…</option>
-                      <option value="500-1000">500 € – 1 000 €</option>
-                      <option value="1000-2500">1 000 € – 2 500 €</option>
-                      <option value="2500-5000">2 500 € – 5 000 €</option>
-                      <option value="5000+">5 000 € et plus</option>
+                      <option value="ghostwriting">Ghostwriting LinkedIn</option>
+                      <option value="profil">Optimisation de profil</option>
+                      <option value="strategie">Stratégie de contenu</option>
+                      <option value="leads">Génération de leads</option>
+                      <option value="audit">Audit LinkedIn</option>
+                      <option value="autre">Autre / Je ne sais pas encore</option>
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1.5">
-                      Décrivez votre projet *
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                      Décrivez votre situation & objectifs *
                     </label>
                     <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      placeholder="Parlez-nous de vos objectifs, de votre audience cible et des types de contenu qui vous intéressent…"
-                      className="w-full rounded-lg border border-gray-200 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition resize-none"
+                      placeholder="Parlez-nous de votre activité, votre audience cible, et ce que vous aimeriez accomplir sur LinkedIn…"
+                      className={`${inputClass} resize-none`}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700 transition-all shadow-sm"
+                    className="btn-primary w-full justify-center"
                   >
-                    Envoyer ma demande
+                    Envoyer ma demande →
                   </button>
 
                   <p className="text-xs text-gray-400 text-center">
                     En envoyant ce formulaire, vous acceptez notre{" "}
-                    <a href="/legal/privacy" className="underline hover:text-brand-600">
+                    <a href="/legal/privacy" className="underline">
                       politique de confidentialité
                     </a>
                     .

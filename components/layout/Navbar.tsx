@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/pricing", label: "Tarifs" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "À propos" },
+  { href: "/#methode", label: "Méthode" },
+  { href: "/#audience", label: "Pour qui" },
+  { href: "/#resultats", label: "Résultats" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Navbar() {
@@ -26,28 +27,32 @@ export default function Navbar() {
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
-          : "bg-transparent"
+          : "bg-white/90 backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-600 to-brand-400 flex items-center justify-center">
-              <span className="text-white font-bold text-sm font-display">O</span>
-            </div>
-            <span className="font-display font-bold text-lg text-gray-900 tracking-tight">
-              Owrites
-            </span>
+          <Link href="/" className="flex items-center">
+            <Logo variant="dark" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors"
+                className="text-sm font-medium transition-colors"
+                style={{ color: "var(--navy)", opacity: 0.75 }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--orange)";
+                  (e.currentTarget as HTMLElement).style.opacity = "1";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--navy)";
+                  (e.currentTarget as HTMLElement).style.opacity = "0.75";
+                }}
               >
                 {link.label}
               </Link>
@@ -55,28 +60,28 @@ export default function Navbar() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="text-sm font-medium text-gray-700 hover:text-brand-600 transition-colors"
-            >
-              Connexion
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700 transition-colors shadow-sm"
-            >
-              Démarrer gratuitement
+          <div className="hidden md:flex items-center">
+            <Link href="/contact" className="btn-primary text-sm">
+              Réserver un appel →
             </Link>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors"
+            style={{ color: "var(--navy)" }}
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 4L16 16M16 4L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            )}
           </button>
         </div>
       </div>
@@ -90,7 +95,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-600 transition-colors"
+                className="px-3 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-gray-50"
+                style={{ color: "var(--navy)" }}
               >
                 {link.label}
               </Link>
@@ -99,9 +105,9 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="w-full inline-flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition-colors"
+                className="btn-primary w-full justify-center text-sm"
               >
-                Démarrer gratuitement
+                Réserver un appel →
               </Link>
             </div>
           </div>
