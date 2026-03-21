@@ -4,6 +4,8 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -13,9 +15,24 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Erreur inconnue");
+      setSubmitted(true);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Erreur serveur. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = "w-full rounded-xl border border-gray-200 px-4 py-3 text-sm outline-none transition focus:ring-2 bg-white"
@@ -221,11 +238,16 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-sm text-red-600 text-center">{error}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="btn-primary w-full justify-center"
+                    disabled={loading}
+                    className="btn-primary w-full justify-center disabled:opacity-60"
                   >
-                    Envoyer ma demande →
+                    {loading ? "Envoi en cours…" : "Envoyer ma demande →"}
                   </button>
 
                   <p className="text-xs text-gray-400 text-center">
