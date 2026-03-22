@@ -4,7 +4,7 @@ export default function CTAFinal() {
   return (
     <section
       style={{
-        background: "var(--orange)",
+        background: "var(--blue)",
         padding: "100px 48px",
         textAlign: "center",
         position: "relative",

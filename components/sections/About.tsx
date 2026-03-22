@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const checks = [
@@ -32,17 +33,15 @@ export default function About() {
 
       {/* Image */}
       <div
-        className="about-img-wrap img-placeholder"
-        style={{ aspectRatio: "4/3", minHeight: 320 }}
-        role="img"
-        aria-label="Olaide Olaniyan en consultation stratégique LinkedIn avec un client fondateur B2B"
+        className="about-img-wrap"
+        style={{ position: "relative", aspectRatio: "4/3", minHeight: 320, borderRadius: "var(--r-lg)", overflow: "hidden" }}
       >
-        <span className="ph-icon">📸</span>
-        <span className="ph-label">
-          IMAGE: Olaide en conversation avec un client (deux personnes), laptop
-          ouvert montrant un profil LinkedIn optimisé. Ambiance consulting,
-          bureau moderne, lumière naturelle. Format 4:3.
-        </span>
+        <Image
+          src="/personal_branding.png"
+          alt="Olaide Olaniyan en consultation stratégique LinkedIn avec un client fondateur B2B"
+          fill
+          style={{ objectFit: "cover" }}
+        />
       </div>
 
       {/* Text */}

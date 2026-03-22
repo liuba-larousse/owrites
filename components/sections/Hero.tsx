@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const Arrow = () => (
@@ -235,22 +236,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Right column — image placeholder */}
-      <div className="hero-visual-wrap">
-        <div
-          className="img-placeholder"
-          style={{ aspectRatio: "4/3", minHeight: 360, borderRadius: "var(--r-xl)" }}
-          role="img"
-          aria-label="Olaide Olaniyan, ghostwriter LinkedIn B2B"
-        >
-          <span className="ph-icon">📸</span>
-          <span className="ph-label">
-            IMAGE: Photo d&apos;Olaide Olaniyan souriante, assise à un bureau avec un
-            laptop, travaillant sur du contenu LinkedIn. Arrière-plan épuré,
-            lumière naturelle, ton professionnel mais chaleureux. Format
-            paysage 4:3.
-          </span>
-        </div>
+      {/* Right column — hero image */}
+      <div
+        className="hero-visual-wrap"
+        style={{ position: "relative", aspectRatio: "4/3", minHeight: 360, borderRadius: "var(--r-xl)", overflow: "hidden" }}
+      >
+        <Image
+          src="/hero.png"
+          alt="Olaide Olaniyan, ghostwriter LinkedIn B2B"
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
       </div>
     </section>
   );
