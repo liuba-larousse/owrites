@@ -23,7 +23,7 @@ export default function CTABand({
       `}</style>
       <div
         style={{
-          background: "var(--orange)",
+          background: "var(--blue)",
           borderRadius: "var(--r-xl)",
           padding: "56px 64px",
           display: "grid",
@@ -81,7 +81,7 @@ export default function CTABand({
           className="cta-band-actions"
         >
           <Link
-            href="https://calendly.com/josephcopy/discovery-call"
+            href="https://calendly.com/olaniyanolaide/discovery-call"
             target="_blank"
             rel="noopener"
             className="btn-dark"

@@ -20,7 +20,7 @@ export default function VideoSection() {
         className="video-section-inner"
       >
         <a
-          href="https://calendly.com/josephcopy/discovery-call"
+          href="https://calendly.com/olaniyanolaide/discovery-call"
           target="_blank"
           rel="noopener"
           style={{

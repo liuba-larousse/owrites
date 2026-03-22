@@ -175,7 +175,7 @@ export default function FAQ() {
       {/* CTA */}
       <div style={{ textAlign: "center", marginTop: 48 }}>
         <Link
-          href="https://calendly.com/josephcopy/discovery-call"
+          href="https://calendly.com/olaniyanolaide/discovery-call"
           target="_blank"
           rel="noopener"
           className="btn-primary"

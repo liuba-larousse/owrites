@@ -127,7 +127,7 @@ export default function CalendlySection() {
           }}
         >
           <iframe
-            src="https://calendly.com/josephcopy/discovery-call?hide_gdpr_banner=1&background_color=f9fafb&text_color=171717&primary_color=FF5202"
+            src="https://calendly.com/olaniyanolaide/discovery-call?hide_gdpr_banner=1&background_color=f9fafb&text_color=171717&primary_color=FF5202"
             title="Réserver un appel stratégique gratuit avec Owrites"
             loading="lazy"
             style={{ width: "100%", height: 660, border: "none" }}

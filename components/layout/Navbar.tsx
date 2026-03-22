@@ -121,7 +121,7 @@ export default function Navbar() {
 
       {/* CTA */}
       <Link
-        href="https://calendly.com/josephcopy/discovery-call"
+        href="https://calendly.com/olaniyanolaide/discovery-call"
         target="_blank"
         rel="noopener"
         className="hidden md:inline-flex"
@@ -213,7 +213,7 @@ export default function Navbar() {
           ))}
           <div style={{ paddingTop: 12, borderTop: "1px solid var(--gray-100)", marginTop: 8 }}>
             <Link
-              href="https://calendly.com/josephcopy/discovery-call"
+              href="https://calendly.com/olaniyanolaide/discovery-call"
               target="_blank"
               rel="noopener"
               onClick={() => setOpen(false)}

@@ -162,7 +162,7 @@ export default function Audience() {
         {/* CTA */}
         <div style={{ textAlign: "center" }}>
           <Link
-            href="https://calendly.com/josephcopy/discovery-call"
+            href="https://calendly.com/olaniyanolaide/discovery-call"
             target="_blank"
             rel="noopener"
             className="btn-primary"
