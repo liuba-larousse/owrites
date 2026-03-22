@@ -1,87 +1,196 @@
+"use client";
+
 const values = [
   {
     title: "Clarté > Volume",
-    description: "Un post pertinent vaut mille posts vides. Nous préférons moins publier, mais mieux.",
+    description: "Un positionnement clair, pas une avalanche de contenu.",
   },
   {
     title: "Constance > Viralité",
-    description: "La régularité construit l'autorité. La viralité est un accident, pas une stratégie.",
+    description: "Une présence régulière, pas des pics d'attention éphémères.",
   },
   {
     title: "Confiance > Tactiques",
-    description: "Les hacks LinkedIn disparaissent. La confiance que vous inspirez, non.",
+    description: "La crédibilité durable, pas les raccourcis.",
   },
   {
     title: "Positionnement d'abord",
-    description: "Avant de créer du contenu, on sait exactement pourquoi vous, pour qui et comment.",
+    description: "La stratégie précède toujours le contenu.",
   },
   {
     title: "Votre voix",
-    description: "Nous n'avons pas de style générique. Chaque client a une voix unique — la vôtre.",
+    description: "Du contenu qui vous ressemble — pas un template IA.",
   },
   {
     title: "Vision long-terme",
-    description: "LinkedIn est un actif qui se construit sur des années. Nous pensons en mois, pas en jours.",
+    description: "L'autorité se capitalise lentement et puissamment.",
   },
 ];
 
 export default function Manifesto() {
   return (
-    <section className="section-py" style={{ backgroundColor: "var(--navy-deep)" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — quote */}
-          <div>
-            <span className="section-tag" style={{ color: "var(--orange)" }}>Notre philosophie</span>
-            <h2
-              className="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-8"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Le manifeste Owrites
-            </h2>
+    <section
+      style={{
+        background: "var(--black)",
+        color: "#fff",
+        padding: "100px 48px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Decorative glow */}
+      <div
+        style={{
+          position: "absolute",
+          width: 500,
+          height: 500,
+          background:
+            "radial-gradient(circle, rgba(255,82,2,0.06), transparent)",
+          bottom: -200,
+          left: -100,
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
+      <style>{`
+        @media (max-width: 1024px) {
+          .manifesto-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .manifesto-values { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .manifesto-section { padding: 60px 20px !important; }
+          .manifesto-values { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
 
-            <blockquote
-              className="text-xl leading-relaxed text-white/85 italic border-l-4 pl-6 mb-8"
+      <div
+        style={{
+          maxWidth: 1280,
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1fr 1.2fr",
+          gap: 72,
+          alignItems: "center",
+          position: "relative",
+          zIndex: 1,
+        }}
+        className="manifesto-grid"
+      >
+        {/* Left */}
+        <div>
+          <div className="section-tag" style={{ color: "var(--orange)" }}>
+            Notre philosophie
+          </div>
+          <h2
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 46px)",
+              fontWeight: 800,
+              lineHeight: 1.1,
+              letterSpacing: "-1.5px",
+              marginBottom: 16,
+              color: "#fff",
+              fontFamily: "var(--font-sans)",
+            }}
+          >
+            Le manifeste{" "}
+            <em
               style={{
-                borderColor: "var(--orange)",
+                fontStyle: "italic",
+                color: "var(--orange)",
                 fontFamily: "var(--font-serif)",
+                fontWeight: 400,
+                letterSpacing: 0,
               }}
             >
-              &ldquo;L&apos;autorité ne se construit pas en publiant plus. Elle se construit en publiant juste — avec une voix claire, une position définie, et la patience de laisser la confiance s&apos;installer.&rdquo;
-            </blockquote>
+              Owrites
+            </em>
+          </h2>
+          <p
+            style={{
+              fontSize: 16,
+              color: "rgba(255,255,255,0.45)",
+              lineHeight: 1.7,
+              maxWidth: 560,
+            }}
+          >
+            Comment l&apos;autorité devrait se construire sur LinkedIn.
+          </p>
 
-            <div className="flex items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
-                style={{ background: "linear-gradient(135deg, var(--orange), var(--orange-light))" }}
+          {/* Quote */}
+          <blockquote
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              fontSize: 22,
+              color: "rgba(255,255,255,0.85)",
+              lineHeight: 1.5,
+              paddingLeft: 20,
+              borderLeft: "3px solid var(--orange)",
+              marginTop: 28,
+            }}
+          >
+            &ldquo;L&apos;autorité ne se construit pas en publiant plus. Elle se
+            construit en disant la bonne chose, avec constance.&rdquo;
+          </blockquote>
+          <div
+            style={{
+              marginTop: 14,
+              fontSize: 14,
+              color: "rgba(255,255,255,0.35)",
+              paddingLeft: 20,
+            }}
+          >
+            — Olaide Olaniyan, Fondatrice d&apos;Owrites
+          </div>
+        </div>
+
+        {/* Right — values grid */}
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}
+          className="manifesto-values"
+        >
+          {values.map((v) => (
+            <div
+              key={v.title}
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: "var(--r-md)",
+                padding: "24px 22px",
+                transition: "all 0.3s",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.background = "rgba(255,255,255,0.07)";
+                el.style.borderColor = "rgba(255,82,2,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.background = "rgba(255,255,255,0.04)";
+                el.style.borderColor = "rgba(255,255,255,0.06)";
+              }}
+            >
+              <h4
+                style={{
+                  fontSize: 15,
+                  fontWeight: 700,
+                  color: "#fff",
+                  marginBottom: 6,
+                }}
               >
-                O
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-white">— Olaide Olaniyan</p>
-                <p className="text-xs text-white/50">Fondatrice d&apos;Owrites</p>
-              </div>
+                {v.title}
+              </h4>
+              <p
+                style={{
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.4)",
+                  lineHeight: 1.6,
+                }}
+              >
+                {v.description}
+              </p>
             </div>
-          </div>
-
-          {/* Right — values grid */}
-          <div className="grid grid-cols-2 gap-4">
-            {values.map((value) => (
-              <div
-                key={value.title}
-                className="rounded-xl p-5 border border-white/10 hover:border-orange/40 transition-colors"
-                style={{ backgroundColor: "var(--navy-light)" }}
-              >
-                <h4
-                  className="text-sm font-bold text-white mb-2"
-                  style={{ color: "var(--orange-light)" }}
-                >
-                  {value.title}
-                </h4>
-                <p className="text-xs text-white/60 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>

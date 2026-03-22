@@ -1,74 +1,184 @@
+"use client";
+
 import Link from "next/link";
 
 const audiences = [
   {
     emoji: "🚀",
+    bg: "var(--orange-glow-strong)",
     title: "Fondateurs B2B",
-    description: "Vous avez bâti quelque chose de solide. LinkedIn est le canal pour faire connaître votre vision, recruter des clients et attirer des partenaires — sans y passer vos soirées.",
-    items: ["CEOs de startups B2B", "Dirigeants de scale-ups", "Fondateurs de cabinets"],
+    description:
+      "Attirez clients, partenaires et opportunités stratégiques avec un profil et du contenu qui communiquent clairement votre valeur.",
   },
   {
     emoji: "💡",
+    bg: "var(--blue-glow)",
     title: "Consultants & coachs",
-    description: "Votre expertise est votre actif. Nous la mettons en valeur sur LinkedIn pour que vos futurs clients vous trouvent avant même que vous les cherchiez.",
-    items: ["Consultants stratégie", "Coachs business", "Formateurs B2B"],
+    description:
+      "Des leads entrants réguliers sans publier tous les jours. Positionnement clair et visibilité constante.",
   },
   {
     emoji: "🎯",
+    bg: "rgba(23,23,23,0.06)",
     title: "Prestataires de services",
-    description: "Agences, freelances senior, experts en ESN — votre personal branding LinkedIn est le meilleur outil de développement commercial que vous avez.",
-    items: ["Agences B2B", "Freelances experts", "Responsables développement"],
+    description:
+      "Transformez LinkedIn en canal d'acquisition. Rendez votre expertise immédiatement compréhensible.",
   },
 ];
 
 export default function Audience() {
   return (
-    <section id="audience" className="section-py bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="audience"
+      style={{ background: "var(--off-white)", padding: "100px 48px" }}
+    >
+      <style>{`
+        @media (max-width: 1024px) {
+          .audience-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .audience-section { padding: 60px 20px !important; }
+        }
+      `}</style>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         {/* Header */}
-        <div className="text-center mb-14">
-          <span className="section-tag mx-auto justify-center">Pour qui</span>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-2"
-            style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+        <div style={{ textAlign: "center", marginBottom: 56 }}>
+          <div
+            className="section-tag"
+            style={{ justifyContent: "center", display: "inline-flex" }}
           >
-            Pour les professionnels B2B qui{" "}
-            <span style={{ color: "var(--orange)" }}>vendent leur expertise</span>
+            Pour qui
+          </div>
+          <h2
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 46px)",
+              fontWeight: 800,
+              lineHeight: 1.1,
+              letterSpacing: "-1.5px",
+              marginBottom: 16,
+              color: "var(--black)",
+              fontFamily: "var(--font-sans)",
+            }}
+          >
+            Pour les professionnels B2B qui vendent{" "}
+            <em
+              style={{
+                fontStyle: "italic",
+                color: "var(--orange)",
+                fontFamily: "var(--font-serif)",
+                fontWeight: 400,
+                letterSpacing: 0,
+              }}
+            >
+              leur expertise
+            </em>
           </h2>
+          <p
+            style={{
+              fontSize: 16,
+              color: "var(--gray-mid)",
+              lineHeight: 1.7,
+              maxWidth: 560,
+              margin: "0 auto",
+            }}
+          >
+            Fondateurs, consultants, prestataires : LinkedIn peut devenir votre
+            premier canal d'acquisition.
+          </p>
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {audiences.map((audience) => (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 20,
+            marginBottom: 48,
+          }}
+          className="audience-grid"
+        >
+          {audiences.map((aud) => (
             <div
-              key={audience.title}
-              className="rounded-2xl border border-gray-200 bg-white p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              key={aud.title}
+              style={{
+                background: "#fff",
+                borderRadius: "var(--r-lg)",
+                padding: "40px 32px",
+                textAlign: "center",
+                border: "1px solid var(--gray-100)",
+                transition: "all 0.35s",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = "var(--orange)";
+                el.style.transform = "translateY(-4px)";
+                el.style.boxShadow = "0 16px 40px rgba(0,0,0,0.05)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = "var(--gray-100)";
+                el.style.transform = "translateY(0)";
+                el.style.boxShadow = "none";
+              }}
             >
-              <div className="text-4xl mb-4">{audience.emoji}</div>
-              <h3
-                className="text-xl font-serif font-bold mb-3"
-                style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                  borderRadius: "50%",
+                  margin: "0 auto 20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 28,
+                  background: aud.bg,
+                }}
               >
-                {audience.title}
+                {aud.emoji}
+              </div>
+              <h3
+                style={{
+                  fontSize: 20,
+                  fontWeight: 700,
+                  marginBottom: 8,
+                  color: "var(--black)",
+                }}
+              >
+                {aud.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                {audience.description}
+              <p
+                style={{
+                  fontSize: 14,
+                  color: "var(--gray-mid)",
+                  lineHeight: 1.7,
+                }}
+              >
+                {aud.description}
               </p>
-              <ul className="space-y-1.5 text-left">
-                {audience.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                    <span style={{ color: "var(--orange)" }}>→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href="/contact" className="btn-primary">
-            Je veux développer mon LinkedIn →
+        {/* CTA */}
+        <div style={{ textAlign: "center" }}>
+          <Link
+            href="https://calendly.com/josephcopy/discovery-call"
+            target="_blank"
+            rel="noopener"
+            className="btn-primary"
+          >
+            Ça me correspond → je réserve un appel{" "}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </Link>
         </div>
       </div>

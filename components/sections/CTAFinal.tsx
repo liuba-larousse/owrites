@@ -3,32 +3,97 @@ import Link from "next/link";
 export default function CTAFinal() {
   return (
     <section
-      className="section-py text-center px-4"
       style={{
-        background: "linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%)",
+        background: "var(--orange)",
+        padding: "100px 48px",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div className="max-w-3xl mx-auto">
+      {/* Decorative glow */}
+      <div
+        style={{
+          position: "absolute",
+          width: 600,
+          height: 600,
+          background:
+            "radial-gradient(circle, rgba(255,255,255,0.08), transparent)",
+          top: -200,
+          left: -200,
+          borderRadius: "50%",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          maxWidth: 680,
+          margin: "0 auto",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
         <h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-5"
-          style={{ fontFamily: "var(--font-serif)" }}
+          style={{
+            fontSize: "clamp(28px, 3.5vw, 42px)",
+            fontWeight: 800,
+            color: "#fff",
+            marginBottom: 16,
+            lineHeight: 1.15,
+            letterSpacing: "-1px",
+            fontFamily: "var(--font-sans)",
+          }}
         >
-          Prêt à faire de LinkedIn votre canal d&apos;acquisition n°1 ?
+          Votre expertise mérite d&apos;être vue sur LinkedIn
         </h2>
-        <p className="text-lg text-white/85 mb-10 max-w-xl mx-auto">
-          Rejoignez les fondateurs et consultants B2B qui ont transformé leur LinkedIn en machine à leads — sans pub, sans automatisation.
+        <p
+          style={{
+            color: "rgba(255,255,255,0.85)",
+            fontSize: 17,
+            marginBottom: 36,
+            lineHeight: 1.7,
+          }}
+        >
+          Ghostwriting LinkedIn, personal branding et génération de leads B2B
+          pour fondateurs et consultants. Rejoignez les professionnels qui ont
+          transformé leur LinkedIn avec Owrites.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/contact" className="btn-white">
-            Réserver un appel gratuit →
+        <div
+          style={{
+            display: "flex",
+            gap: 14,
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href="https://calendly.com/josephcopy/discovery-call"
+            target="_blank"
+            rel="noopener"
+            className="btn-white"
+          >
+            Réserver un appel gratuit{" "}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </Link>
-          <Link href="/services" className="btn-outline-white">
-            Découvrir nos offres
-          </Link>
+          <a
+            href="https://www.olaidewrites.com/projects/linkedin-lead-generation-case-study"
+            target="_blank"
+            rel="noopener"
+            className="btn-dark"
+          >
+            Voir l&apos;étude de cas Hostlyft
+          </a>
         </div>
-        <p className="text-sm text-white/60 mt-6">
-          Appel de 30 min · Sans engagement · Résultats garantis en 90 jours
-        </p>
       </div>
     </section>
   );

@@ -1,78 +1,173 @@
+"use client";
+
 import Link from "next/link";
 
 const results = [
-  {
-    emoji: "📈",
-    value: "+95%",
-    label: "d'impressions organiques",
-    description: "En moyenne sur les 90 premiers jours d'accompagnement.",
-  },
-  {
-    emoji: "👥",
-    value: "6 000+",
-    label: "abonnés qualifiés gagnés",
-    description: "Des abonnés dans votre cible B2B, pas des chiffres vides.",
-  },
-  {
-    emoji: "💼",
-    value: "312",
-    label: "leads générés en 2025",
-    description: "Pour l'ensemble de nos clients actifs sur l'année.",
-  },
-  {
-    emoji: "⭐",
-    value: "94",
-    label: "score SSI LinkedIn moyen",
-    description: "Social Selling Index — dans le top 10% de votre secteur.",
-  },
+  { icon: "👁️", bg: "var(--orange-glow-strong)", num: "+95", suffix: "%", label: "Impressions en hausse" },
+  { icon: "🔥", bg: "var(--blue-glow)", num: "6 000", suffix: "+", label: "Impressions top post" },
+  { icon: "👤", bg: "var(--orange-glow-strong)", num: "312", suffix: "", label: "Vues de profil" },
+  { icon: "🔍", bg: "var(--blue-glow)", num: "94", suffix: "", label: "Apparitions en recherche" },
 ];
 
 export default function Results() {
   return (
-    <section id="resultats" className="section-py" style={{ backgroundColor: "#f8f9fb" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <span className="section-tag mx-auto justify-center">Résultats organiques LinkedIn</span>
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mt-2"
-            style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
+    <section
+      id="resultats"
+      style={{ maxWidth: 1280, margin: "0 auto", padding: "100px 48px" }}
+    >
+      <style>{`
+        @media (max-width: 1024px) {
+          .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 768px) {
+          .results-section { padding: 60px 20px !important; }
+        }
+      `}</style>
+
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: 56 }}>
+        <div
+          className="section-tag"
+          style={{ justifyContent: "center", display: "inline-flex" }}
+        >
+          Résultats organiques LinkedIn
+        </div>
+        <h2
+          style={{
+            fontSize: "clamp(28px, 3.5vw, 46px)",
+            fontWeight: 800,
+            lineHeight: 1.1,
+            letterSpacing: "-1.5px",
+            marginBottom: 16,
+            color: "var(--black)",
+            fontFamily: "var(--font-sans)",
+          }}
+        >
+          Des métriques de performance{" "}
+          <em
+            style={{
+              fontStyle: "italic",
+              color: "var(--orange)",
+              fontFamily: "var(--font-serif)",
+              fontWeight: 400,
+              letterSpacing: 0,
+            }}
           >
-            Des métriques de performance{" "}
-            <span style={{ color: "var(--orange)" }}>concrètes</span>
-          </h2>
-        </div>
+            concrètes
+          </em>
+        </h2>
+        <p
+          style={{
+            fontSize: 16,
+            color: "var(--gray-mid)",
+            lineHeight: 1.7,
+            maxWidth: 560,
+            margin: "0 auto",
+          }}
+        >
+          Pas de pub. Pas d&apos;automatisation. Juste du positionnement clair et du
+          contenu stratégique.
+        </p>
+      </div>
 
-        {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {results.map((result) => (
+      {/* Cards */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 20,
+          marginBottom: 48,
+        }}
+        className="results-grid"
+      >
+        {results.map((r) => (
+          <div
+            key={r.label}
+            style={{
+              background: "var(--off-white)",
+              borderRadius: "var(--r-lg)",
+              padding: "36px 24px",
+              textAlign: "center",
+              transition: "all 0.3s",
+              border: "1px solid transparent",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLDivElement;
+              el.style.background = "#fff";
+              el.style.borderColor = "var(--gray-200)";
+              el.style.transform = "translateY(-3px)";
+              el.style.boxShadow = "0 12px 32px rgba(0,0,0,0.04)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLDivElement;
+              el.style.background = "var(--off-white)";
+              el.style.borderColor = "transparent";
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "none";
+            }}
+          >
             <div
-              key={result.value}
-              className="bg-white rounded-2xl border border-gray-200 p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              style={{
+                width: 52,
+                height: 52,
+                borderRadius: "50%",
+                margin: "0 auto 16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 22,
+                background: r.bg,
+              }}
             >
-              <div className="text-3xl mb-3">{result.emoji}</div>
-              <div
-                className="text-3xl font-bold mb-1"
-                style={{ fontFamily: "var(--font-serif)", color: "var(--orange)" }}
-              >
-                {result.value}
-              </div>
-              <div
-                className="text-sm font-semibold mb-2"
-                style={{ color: "var(--navy)" }}
-              >
-                {result.label}
-              </div>
-              <p className="text-xs text-gray-500 leading-relaxed">{result.description}</p>
+              {r.icon}
             </div>
-          ))}
-        </div>
+            <div
+              style={{
+                fontSize: 36,
+                fontWeight: 800,
+                color: "var(--black)",
+                letterSpacing: "-1px",
+                lineHeight: 1,
+                marginBottom: 4,
+              }}
+            >
+              {r.num}
+              <span style={{ color: "var(--orange)" }}>{r.suffix}</span>
+            </div>
+            <div
+              style={{
+                fontSize: 13,
+                color: "var(--gray-light)",
+                fontWeight: 500,
+              }}
+            >
+              {r.label}
+            </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="text-center">
-          <Link href="/contact" className="btn-primary">
-            Obtenir ces résultats →
-          </Link>
-        </div>
+      {/* CTA */}
+      <div style={{ textAlign: "center" }}>
+        <Link
+          href="https://calendly.com/josephcopy/discovery-call"
+          target="_blank"
+          rel="noopener"
+          className="btn-primary"
+        >
+          Obtenir ces résultats pour mon profil{" "}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Link>
       </div>
     </section>
   );

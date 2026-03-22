@@ -1,155 +1,255 @@
+"use client";
+
 import Link from "next/link";
+
+const Arrow = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+  >
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-28 pb-20 lg:pt-36 lg:pb-28">
-      {/* Subtle background */}
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute -top-32 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-30"
-          style={{ background: "radial-gradient(circle, var(--orange-glow), transparent)" }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-20"
-          style={{ background: "radial-gradient(circle, rgba(75,163,199,0.2), transparent)" }}
-        />
-      </div>
+    <section
+      style={{
+        padding: "140px 48px 80px",
+        maxWidth: 1280,
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "1.15fr 0.85fr",
+        gap: 64,
+        alignItems: "center",
+      }}
+      className="hero-grid"
+    >
+      <style>{`
+        @media (max-width: 1024px) {
+          .hero-grid { grid-template-columns: 1fr !important; gap: 48px !important; padding-left: 20px !important; padding-right: 20px !important; }
+          .hero-visual-wrap { order: -1; max-width: 480px; margin: 0 auto; width: 100%; }
+        }
+        @media (max-width: 768px) {
+          .hero-grid { padding-top: 100px !important; padding-left: 20px !important; padding-right: 20px !important; }
+        }
+      `}</style>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
-          {/* Left column */}
-          <div>
-            {/* Hero badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-orange/30 bg-orange/5 px-4 py-1.5 text-xs font-semibold mb-8" style={{ color: "var(--orange)" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-orange animate-pulse" style={{ backgroundColor: "var(--orange)" }} />
-              Ghostwriter LinkedIn B2B — France
-            </div>
-
-            {/* H1 */}
-            <h1
-              className="text-4xl sm:text-5xl lg:text-[3.25rem] font-serif leading-[1.1] mb-6"
-              style={{ color: "var(--navy)", fontFamily: "var(--font-serif)" }}
-            >
-              Votre LinkedIn ne reflète pas votre{" "}
-              <em
-                className="not-italic"
+      {/* Left column */}
+      <div>
+        {/* Badge */}
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            marginBottom: 28,
+          }}
+        >
+          <div style={{ display: "flex" }}>
+            {[
+              { bg: "#F97316", label: "O" },
+              { bg: "#3B82F6", label: "W" },
+              { bg: "#171717", label: "→" },
+            ].map((av, i) => (
+              <span
+                key={i}
                 style={{
-                  color: "var(--orange)",
-                  fontStyle: "italic",
-                  fontFamily: "var(--font-serif)",
+                  width: 28,
+                  height: 28,
+                  borderRadius: "50%",
+                  border: "2px solid #fff",
+                  marginLeft: i === 0 ? 0 : -8,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#fff",
+                  background: av.bg,
                 }}
               >
-                expertise
-              </em>{" "}
-              ? On s&apos;en occupe.
-            </h1>
-
-            {/* Subtext */}
-            <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl">
-              Ghostwriting LinkedIn, optimisation de profil et stratégie de contenu pour les fondateurs et consultants B2B francophones. Zéro jargon, 100% votre voix.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-8">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
-                Réserver un appel gratuit
-              </Link>
-              <Link href="/services" className="btn-secondary w-full sm:w-auto justify-center">
-                Découvrir nos services
-              </Link>
-            </div>
-
-            {/* Trust text */}
-            <p className="text-sm text-gray-500 flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
-                <path d="M8 1L9.76 5.58L14.66 6.27L11.33 9.52L12.1 14.4L8 12.1L3.9 14.4L4.67 9.52L1.34 6.27L6.24 5.58L8 1Z" fill="var(--orange)" />
-              </svg>
-              100% organique — zéro pub, zéro automatisation. Résultats visibles en 90 jours.
-            </p>
+                {av.label}
+              </span>
+            ))}
           </div>
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              color: "var(--gray-dark)",
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Ghostwriter LinkedIn B2B
+          </span>
+        </div>
 
-          {/* Right column — Hero card */}
-          <div className="relative">
-            <div
-              className="rounded-2xl p-8 relative overflow-hidden"
-              style={{ backgroundColor: "var(--navy)" }}
+        {/* H1 */}
+        <h1
+          style={{
+            fontSize: "clamp(40px, 5vw, 62px)",
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: "-2px",
+            marginBottom: 24,
+            color: "var(--black)",
+            fontFamily: "var(--font-sans)",
+          }}
+        >
+          Votre LinkedIn ne reflète pas votre{" "}
+          <em
+            style={{
+              fontStyle: "italic",
+              color: "var(--orange)",
+              fontFamily: "var(--font-serif)",
+              fontWeight: 400,
+              letterSpacing: 0,
+            }}
+          >
+            expertise
+          </em>{" "}
+          ?
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          style={{
+            fontSize: 17,
+            color: "var(--gray-mid)",
+            lineHeight: 1.75,
+            maxWidth: 480,
+            marginBottom: 36,
+            fontWeight: 400,
+          }}
+        >
+          Ghostwriting LinkedIn, optimisation de profil et stratégie de contenu
+          pour fondateurs et consultants B2B. Des leads qualifiés en inbound,
+          sans publier vous-même.
+        </p>
+
+        {/* CTAs */}
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href="https://calendly.com/josephcopy/discovery-call"
+            target="_blank"
+            rel="noopener"
+            className="btn-primary"
+          >
+            Réserver un appel gratuit <Arrow />
+          </Link>
+          <Link href="#services" className="btn-ghost" style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+            <span
+              style={{
+                width: 40,
+                height: 40,
+                border: "2px solid var(--gray-200)",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              {/* Floating tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--orange-glow)", color: "var(--orange-light)" }}
-                >
-                  ✦ Personal Branding
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: "rgba(75,163,199,0.15)", color: "var(--blue-light)" }}
-                >
-                  ✦ Génération de leads
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.7)" }}
-                >
-                  ✦ Ghostwriting B2B
-                </span>
-              </div>
+              <Arrow />
+            </span>
+            Découvrir
+          </Link>
+        </div>
 
-              {/* Stats grid */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  { value: "3.4×", label: "portée organique" },
-                  { value: "+52%", label: "leads entrants" },
-                  { value: "6K+", label: "abonnés gagnés" },
-                  { value: "94", label: "score SSI moyen" },
-                ].map((stat) => (
-                  <div
-                    key={stat.value}
-                    className="rounded-xl p-4"
-                    style={{ backgroundColor: "var(--navy-light)" }}
-                  >
-                    <div
-                      className="text-2xl font-serif font-bold mb-0.5"
-                      style={{ color: "var(--orange-light)", fontFamily: "var(--font-serif)" }}
-                    >
-                      {stat.value}
-                    </div>
-                    <div className="text-xs text-white/60">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <div className="border-t border-white/10 pt-5">
-                <p
-                  className="text-sm leading-relaxed text-white/80 italic mb-3"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  &ldquo;En 3 mois, j&apos;ai généré 12 leads qualifiés directement depuis LinkedIn — sans pub.&rdquo;
-                </p>
-                <div className="flex items-center gap-2">
-                  <div
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ backgroundColor: "var(--orange)" }}
-                  >
-                    A
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-white">Antoine M.</p>
-                    <p className="text-xs text-white/50">Fondateur SaaS B2B</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative blob */}
-              <div
-                aria-hidden="true"
-                className="absolute -bottom-12 -right-12 w-40 h-40 rounded-full opacity-20"
-                style={{ background: "radial-gradient(circle, var(--orange), transparent)" }}
-              />
+        {/* Stats */}
+        <div
+          style={{
+            display: "flex",
+            gap: 32,
+            marginTop: 40,
+            paddingTop: 32,
+            borderTop: "1px solid var(--gray-200)",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontSize: 32,
+                fontWeight: 800,
+                color: "var(--black)",
+                letterSpacing: "-1px",
+                lineHeight: 1,
+              }}
+            >
+              2–5×
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "var(--gray-light)",
+                fontWeight: 500,
+                marginTop: 4,
+              }}
+            >
+              Impressions
             </div>
           </div>
+          <div
+            style={{
+              width: 1,
+              background: "var(--gray-200)",
+              alignSelf: "stretch",
+            }}
+          />
+          <div>
+            <div
+              style={{
+                fontSize: 32,
+                fontWeight: 800,
+                color: "var(--black)",
+                letterSpacing: "-1px",
+                lineHeight: 1,
+              }}
+            >
+              +70%
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: "var(--gray-light)",
+                fontWeight: 500,
+                marginTop: 4,
+              }}
+            >
+              Vues profil
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right column — image placeholder */}
+      <div className="hero-visual-wrap">
+        <div
+          className="img-placeholder"
+          style={{ aspectRatio: "4/3", minHeight: 360, borderRadius: "var(--r-xl)" }}
+          role="img"
+          aria-label="Olaide Olaniyan, ghostwriter LinkedIn B2B"
+        >
+          <span className="ph-icon">📸</span>
+          <span className="ph-label">
+            IMAGE: Photo d&apos;Olaide Olaniyan souriante, assise à un bureau avec un
+            laptop, travaillant sur du contenu LinkedIn. Arrière-plan épuré,
+            lumière naturelle, ton professionnel mais chaleureux. Format
+            paysage 4:3.
+          </span>
         </div>
       </div>
     </section>
