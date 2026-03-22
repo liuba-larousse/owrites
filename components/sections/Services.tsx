@@ -71,16 +71,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.number}
-              className="group rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-default"
-              style={{
-                "--hover-border": "var(--orange)",
-              } as React.CSSProperties}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--orange)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "#e5e7eb";
-              }}
+              className="group rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange cursor-default"
             >
               {/* Number + icon */}
               <div className="flex items-start justify-between mb-6">

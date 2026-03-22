@@ -43,16 +43,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium transition-colors"
-                style={{ color: "var(--navy)", opacity: 0.75 }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "var(--orange)";
-                  (e.currentTarget as HTMLElement).style.opacity = "1";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "var(--navy)";
-                  (e.currentTarget as HTMLElement).style.opacity = "0.75";
-                }}
+                className="text-sm font-medium transition-colors text-navy opacity-75 hover:text-orange hover:opacity-100"
               >
                 {link.label}
               </Link>
