@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const metrics = [
   { num: "16 900", suffix: "+", label: "Impressions organiques" },
   { num: "1K–6K", suffix: "", label: "Impressions par post" },
@@ -266,7 +268,7 @@ export default function CaseStudy() {
           </a>
         </div>
 
-        {/* Right — image placeholders */}
+        {/* Right — screenshots */}
         <div
           style={{
             background: "var(--gray-100)",
@@ -279,38 +281,26 @@ export default function CaseStudy() {
           }}
         >
           {[
-            "IMAGE 1: Screenshot du profil LinkedIn optimisé d'Hostlyft — titre SEO, banner professionnel, section \"À propos\" réécrite. Flouter données sensibles.",
-            "IMAGE 2: Screenshot d'une publication LinkedIn performante (1K-6K impressions) avec engagement visible. Contenu STR/revenue management.",
-            "IMAGE 3: Screenshot LinkedIn analytics — courbe des 16 900+ impressions sur 90 jours. Graphique ascendant en barres.",
-          ].map((desc, i) => (
+            { src: "/hostlyft-profile.png", alt: "Profil LinkedIn optimisé d'Hostlyft" },
+            { src: "/linkedin-post-performance.png", alt: "Publication LinkedIn performante (1K-6K impressions)" },
+            { src: "/analytics-impressions.png", alt: "LinkedIn analytics — 16 900+ impressions sur 90 jours" },
+          ].map(({ src, alt }, i) => (
             <div
               key={i}
               style={{
                 width: "100%",
-                aspectRatio: "16/10",
-                background: "#fff",
                 borderRadius: "var(--r-md)",
-                border: "2px dashed var(--gray-200)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 8,
-                padding: 16,
-                textAlign: "center",
+                overflow: "hidden",
+                position: "relative",
               }}
             >
-              <span style={{ fontSize: 28, opacity: 0.4 }}>📸</span>
-              <span
-                style={{
-                  fontSize: 11,
-                  color: "var(--gray-light)",
-                  fontStyle: "italic",
-                  lineHeight: 1.4,
-                }}
-              >
-                {desc}
-              </span>
+              <Image
+                src={src}
+                alt={alt}
+                width={800}
+                height={500}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
             </div>
           ))}
         </div>

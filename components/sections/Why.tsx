@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const tags = ["Ghostwriting LinkedIn", "Personal Branding", "100% Organique"];
 const stats = [
   { num: "+95%", label: "Impressions en hausse" },
@@ -138,18 +140,18 @@ export default function Why() {
         </div>
       </div>
 
-      {/* Image placeholder */}
+      {/* Analytics screenshot */}
       <div
-        className="why-img-wrap img-placeholder"
-        style={{ aspectRatio: "4/3", minHeight: 320, position: "relative" }}
-        role="img"
-        aria-label="Dashboard LinkedIn analytics montrant la croissance des impressions et des vues de profil"
+        className="why-img-wrap"
+        style={{ position: "relative", minHeight: 320 }}
       >
-        <span className="ph-icon">📸</span>
-        <span className="ph-label">
-          IMAGE: Screenshot d&apos;un tableau de bord LinkedIn analytics montrant une
-          courbe ascendante d&apos;impressions et de vues de profil. Format 4:3.
-        </span>
+        <Image
+          src="/analytics-dashboard.png"
+          alt="Dashboard LinkedIn analytics montrant la croissance des impressions et des vues de profil"
+          width={800}
+          height={600}
+          style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--r-md)" }}
+        />
         <span
           style={{
             position: "absolute",
