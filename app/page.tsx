@@ -10,6 +10,7 @@ import Why from "@/components/sections/Why";
 import Compare from "@/components/sections/Compare";
 import Results from "@/components/sections/Results";
 import CaseStudy from "@/components/sections/CaseStudy";
+import Testimonials from "@/components/sections/Testimonials";
 import Manifesto from "@/components/sections/Manifesto";
 import FAQ from "@/components/sections/FAQ";
 import CalendlySection from "@/components/sections/CalendlySection";
@@ -34,6 +35,7 @@ export default function HomePage() {
       <Compare />
       <Results />
       <CaseStudy />
+      <Testimonials />
       <Manifesto />
       <FAQ />
       <CalendlySection />
