@@ -160,7 +160,7 @@
 .consulting-root .hcard p { font-size: 13px; color: var(--gray-mid); line-height: 1.55; }
 
 /* OFFERS */
-.consulting-root .offers { max-width: 1280px; margin: 0 auto; padding: 120px 48px 100px; }
+.consulting-root .offers { max-width: 1280px; margin: 0 auto; padding: 168px 48px 100px; }
 .consulting-root .offers-header { text-align: center; margin-bottom: 56px; }
 .consulting-root .offers-header .section-desc { margin: 0 auto; }
 .consulting-root .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
