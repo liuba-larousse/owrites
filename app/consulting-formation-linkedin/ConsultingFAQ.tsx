@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -17,7 +18,7 @@ const faqs = [
   },
   {
     q: "Les formations LinkedIn lead generation sont-elles éligibles au financement ?",
-    a: "Oui, nos formations professionnelles de lead generation LinkedIn (de 1 497€ à 3 297€ HT) peuvent être éligibles aux dispositifs de financement (OPCO, CPF). Contactez-nous pour discuter des possibilités de prise en charge.",
+    a: "Oui, nos formations professionnelles de lead generation LinkedIn (de 1 497€ à 3 297€ HT (groupe ou individuel)) peuvent être éligibles aux dispositifs de financement (OPCO, CPF). Contactez-nous pour discuter des possibilités de prise en charge.",
   },
   {
     q: "Quels résultats concrets attendre du coaching lead generation LinkedIn ?",
@@ -29,74 +30,80 @@ const faqs = [
   },
 ];
 
+const ArrowIcon = () => (
+  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
+
 export default function ConsultingFAQ() {
-  const [open, setOpen] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showSticky, setShowSticky] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = rootRef.current?.closest(".consulting-root");
+    if (!root) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+    );
+    root.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setShowSticky(window.scrollY > 500);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div>
-      {faqs.map((item, i) => (
-        <div
-          key={i}
-          style={{ borderBottom: "1px solid var(--gray-200)" }}
-        >
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            style={{
-              padding: "22px 0",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              textAlign: "left",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 17,
-              fontWeight: 600,
-              color: open === i ? "var(--orange)" : "var(--black)",
-              fontFamily: "var(--font-sans)",
-              gap: 16,
-              transition: "color 0.2s",
-            }}
-          >
-            {item.q}
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              style={{
-                width: 20,
-                flexShrink: 0,
-                color: "var(--orange)",
-                transform: open === i ? "rotate(45deg)" : "none",
-                transition: "transform 0.3s",
-              }}
-            >
-              <path d="M12 5v14M5 12h14" />
-            </svg>
-          </button>
-          <div
-            style={{
-              maxHeight: open === i ? 300 : 0,
-              overflow: "hidden",
-              transition: "max-height 0.4s ease",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 15,
-                color: "var(--gray-mid)",
-                lineHeight: 1.8,
-                paddingBottom: 22,
-              }}
-            >
-              {item.a}
-            </p>
-          </div>
+    <div ref={rootRef}>
+      <section className="faq" id="faq">
+        <div className="faq-header">
+          <div className="section-tag fade-up">FAQ — Consulting LinkedIn & Lead Generation</div>
+          <h2 className="section-title fade-up s1">
+            Questions fréquentes sur le <em>lead generation LinkedIn</em>
+          </h2>
+          <p className="section-desc fade-up s2">
+            Tout savoir sur nos offres de consulting LinkedIn, lead generation B2B et formations social selling.
+          </p>
         </div>
-      ))}
+
+        {faqs.map((item, i) => (
+          <div key={i} className={`faq-item fade-up${i % 4 === 1 ? " s1" : i % 4 === 2 ? " s2" : i % 4 === 3 ? " s3" : ""}${openIndex === i ? " open" : ""}`}>
+            <button className="faq-q" onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+              {item.q}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+            <div className="faq-a">
+              <p>{item.a}</p>
+            </div>
+          </div>
+        ))}
+
+        <div className="faq-cta fade-up">
+          <Link href="https://calendly.com/josephcopy/discovery-call" target="_blank" rel="noopener" className="btn-primary">
+            D&apos;autres questions ? Parlons-en <ArrowIcon />
+          </Link>
+        </div>
+      </section>
+
+      <div className={`sticky-cta${showSticky ? " show" : ""}`}>
+        <span className="sticky-cta-text">LinkedIn lead generation →</span>
+        <Link
+          href="https://calendly.com/josephcopy/discovery-call"
+          target="_blank"
+          rel="noopener"
+          className="btn-primary"
+          style={{ padding: "12px 24px", fontSize: "13px" }}
+        >
+          Appel gratuit <ArrowIcon />
+        </Link>
+      </div>
     </div>
   );
 }

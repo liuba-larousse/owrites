@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#methode", label: "Méthode" },
   { href: "#resultats", label: "Résultats" },
   { href: "#faq", label: "FAQ" },
-  { href: "/consulting", label: "Consulting" },
+  { href: "/consulting-formation-linkedin", label: "Consulting" },
 ];
 
 export default function Navbar() {
