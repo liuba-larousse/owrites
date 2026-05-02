@@ -3,13 +3,12 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#methode", label: "Méthode" },
-  { href: "#resultats", label: "Résultats" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/", label: "Accueil" },
+  { href: "/#services", label: "Services" },
+  { href: "/consulting", label: "Consulting" },
+  { href: "/tarifs", label: "Tarifs" },
   { href: "/blog", label: "Blog" },
-  { href: "#etude-de-cas", label: "Études de cas" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Footer() {

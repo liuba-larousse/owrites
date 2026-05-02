@@ -10,15 +10,15 @@ const faqs = [
   },
   {
     q: "Les formations lead generation LinkedIn sont-elles individuelles ou en groupe ?",
-    a: "Les deux. Nos formations social selling et lead generation LinkedIn sont disponibles en sessions individuelles (à partir de 1 497€ HT) ou en groupe pour vos équipes (même tarif). Le programme est adapté à chaque situation.",
+    a: "Les deux. Nos formations social selling et lead generation LinkedIn sont disponibles en sessions individuelles ou en groupe pour vos équipes (même tarif). Le programme est adapté à chaque situation. Consultez nos tarifs pour les détails.",
   },
   {
     q: "Combien de temps pour générer des leads qualifiés sur LinkedIn ?",
-    a: "Avec le coaching lead generation LinkedIn (447€ HT/mois), la plupart des clients constatent leurs premiers leads qualifiés en 60 à 90 jours. L'engagement minimum de 3 mois permet de construire un système de lead generation durable.",
+    a: "Avec le coaching lead generation LinkedIn, la plupart des clients constatent leurs premiers leads qualifiés en 60 à 90 jours. L'engagement minimum de 3 mois permet de construire un système de lead generation durable.",
   },
   {
     q: "Les formations LinkedIn lead generation sont-elles éligibles au financement ?",
-    a: "Oui, nos formations professionnelles de lead generation LinkedIn (de 1 497€ à 3 297€ HT (groupe ou individuel)) peuvent être éligibles aux dispositifs de financement (OPCO, CPF). Contactez-nous pour discuter des possibilités de prise en charge.",
+    a: "Oui, nos formations professionnelles de lead generation LinkedIn peuvent être éligibles aux dispositifs de financement (OPCO, CPF). Consultez nos tarifs et contactez-nous pour discuter des possibilités de prise en charge.",
   },
   {
     q: "Quels résultats concrets attendre du coaching lead generation LinkedIn ?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Combien coûte un consulting lead generation LinkedIn avec Owrites ?",
-    a: "L'audit LinkedIn lead generation est à 147€ HT (ponctuel). Le coaching lead generation complet est à 447€ HT/mois (engagement 3 mois). Les formations varient de 1 497€ à 3 297€ HT (groupe ou individuel). Tous les tarifs sont hors taxes.",
+    a: "Nous proposons plusieurs formules : audit ponctuel, coaching mensuel et formations complètes. Tous les tarifs sont détaillés sur notre page tarifs — sans frais cachés, tous les prix sont HT.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function ConsultingFAQ() {
         ))}
 
         <div className="faq-cta fade-up">
-          <Link href="https://calendly.com/josephcopy/discovery-call" target="_blank" rel="noopener" className="btn-primary">
+          <Link href="https://calendly.com/olaniyanolaide/discovery-call" target="_blank" rel="noopener" className="btn-primary">
             D&apos;autres questions ? Parlons-en <ArrowIcon />
           </Link>
         </div>
@@ -95,7 +95,7 @@ export default function ConsultingFAQ() {
       <div className={`sticky-cta${showSticky ? " show" : ""}`}>
         <span className="sticky-cta-text">LinkedIn lead generation →</span>
         <Link
-          href="https://calendly.com/josephcopy/discovery-call"
+          href="https://calendly.com/olaniyanolaide/discovery-call"
           target="_blank"
           rel="noopener"
           className="btn-primary"

@@ -158,7 +158,7 @@ export default function PricingPreview() {
 
         <div className="text-center mt-8">
           <Link
-            href="/pricing"
+            href="/tarifs"
             className="text-sm text-brand-600 hover:text-brand-700 font-medium underline underline-offset-4"
           >
             Voir tous les détails des offres →

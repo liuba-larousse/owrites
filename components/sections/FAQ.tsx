@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "À qui s'adresse ce service ?",
     answer:
-      "Aux fondateurs B2B, consultants et professionnels du service qui veulent des leads qualifiés via LinkedIn — sans passer des heures à publier du contenu.",
+      "Aux fondateurs B2B, consultants et professionnels du service qui veulent des leads qualifiés via LinkedIn — sans passer des heures à publier du contenu. Pour ceux qui préfèrent apprendre à le faire eux-mêmes, découvrez notre consulting et formations LinkedIn.",
   },
   {
     question: "Combien de temps pour voir des résultats ?",
@@ -36,6 +36,16 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -44,6 +54,10 @@ export default function FAQ() {
       id="faq"
       style={{ maxWidth: 820, margin: "0 auto", padding: "100px 48px" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <style>{`
         @media (max-width: 768px) {
           .faq-section { padding: 60px 20px !important; }

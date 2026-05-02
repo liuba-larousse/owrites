@@ -20,6 +20,63 @@ export interface BlogPost {
 // Static blog posts — replace with CMS/API/AI-agent integration
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cout-ghostwriter-linkedin-2026",
+    title: "Combien coûte un ghostwriter LinkedIn en 2026 ? Ce que les fondateurs paient vraiment",
+    excerpt:
+      "Guide complet des tarifs du ghostwriting LinkedIn en 2026. Les vrais prix du marché, ce qui est inclus à chaque niveau, et comment choisir le bon ghostwriter pour votre lead generation B2B.",
+    category: "Tarifs & Stratégie",
+    tags: ["ghostwriter", "tarifs", "LinkedIn", "lead generation", "B2B"],
+    author: {
+      name: "Olaide Olaniyan",
+      role: "Fondatrice — Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
+    },
+    publishedAt: "2026-01-01",
+    readTime: "8 min",
+    coverColor: "from-brand-600 to-brand-800",
+    featured: true,
+    content: "Article complet disponible sur la page dédiée.",
+  },
+  {
+    slug: "generer-leads-qualifies-linkedin",
+    title: "Comment générer des leads qualifiés sur LinkedIn en 2026 : le guide complet",
+    excerpt:
+      "Stratégie de contenu, optimisation de profil, social selling — le guide complet pour transformer votre LinkedIn en machine à lead generation B2B. 100% organique.",
+    category: "Lead Generation",
+    tags: ["lead generation", "LinkedIn", "social selling", "B2B", "prospection"],
+    author: {
+      name: "Olaide Olaniyan",
+      role: "Fondatrice — Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
+    },
+    publishedAt: "2026-02-15",
+    readTime: "10 min",
+    coverColor: "from-brand-600 to-brand-800",
+    featured: false,
+    content: "Article complet disponible sur la page dédiée.",
+  },
+  {
+    slug: "ghostwriter-linkedin-voix-authenticite",
+    title: "Un ghostwriter LinkedIn gardera-t-il ma voix ? Authenticité et personal branding expliqués",
+    excerpt:
+      "La question n°1 des fondateurs avant de déléguer leur LinkedIn. Comment fonctionne la capture de voix, pourquoi le mauvais ghostwriting sonne faux, et comment choisir un ghostwriter qui préserve votre authenticité.",
+    category: "Voix & Authenticité",
+    tags: ["ghostwriter", "voix", "authenticité", "personal branding", "LinkedIn"],
+    author: {
+      name: "Olaide Olaniyan",
+      role: "Fondateur — Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
+    },
+    publishedAt: "2026-01-10",
+    readTime: "7 min",
+    coverColor: "from-brand-600 to-brand-800",
+    featured: false,
+    content: "Article complet disponible sur la page dédiée.",
+  },
+  {
     slug: "strategie-contenu-b2b-2025",
     title: "5 piliers d'une stratégie de contenu B2B efficace en 2025",
     excerpt:
@@ -35,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-03-12",
     readTime: "8 min",
     coverColor: "from-brand-600 to-brand-800",
-    featured: true,
+    featured: false,
     content: `
 ## Introduction
 

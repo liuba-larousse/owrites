@@ -250,9 +250,7 @@ export default function CaseStudy() {
           </div>
 
           <a
-            href="https://www.olaidewrites.com/projects/linkedin-lead-generation-case-study"
-            target="_blank"
-            rel="noopener"
+            href="/etude-de-cas/hostlyft"
             style={{
               display: "inline-flex",
               alignItems: "center",

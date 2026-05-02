@@ -109,6 +109,22 @@ export default function Services() {
           </p>
         </div>
 
+        {/* Links */}
+        <div style={{ display: "flex", gap: 16, justifyContent: "center", marginTop: -24, marginBottom: 32, flexWrap: "wrap" }}>
+          <Link
+            href="/consulting"
+            style={{ fontSize: 14, fontWeight: 600, color: "var(--orange)", textDecoration: "none" }}
+          >
+            En savoir plus sur nos formations social selling →
+          </Link>
+          <Link
+            href="/tarifs"
+            style={{ fontSize: 14, fontWeight: 600, color: "var(--orange)", textDecoration: "none" }}
+          >
+            Voir nos tarifs ghostwriting LinkedIn →
+          </Link>
+        </div>
+
         {/* Grid */}
         <div
           style={{

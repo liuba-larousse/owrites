@@ -3,12 +3,12 @@ import Link from "next/link";
 import ConsultingFAQ from "./ConsultingFAQ";
 import "./consulting.css";
 
-const CALENDLY = "https://calendly.com/josephcopy/discovery-call";
+const CALENDLY = "https://calendly.com/olaniyanolaide/discovery-call";
 
 export const metadata: Metadata = {
   title: "Consulting LinkedIn & Lead Generation B2B | Formation Social Selling — Owrites",
   description:
-    "Consulting LinkedIn et lead generation B2B pour fondateurs et consultants. Formation social selling, coaching personal branding et génération de leads qualifiés sur LinkedIn. Résultats en 90 jours.",
+    "Consulting LinkedIn et lead generation B2B pour fondateurs et consultants. Formation social selling, coaching personal branding. Résultats en 90 jours.",
   keywords: [
     "consulting LinkedIn",
     "lead generation LinkedIn",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://owrites.com/consulting-formation-linkedin",
+    url: "https://owrites.com/consulting",
     title: "Consulting LinkedIn & Lead Generation B2B — Owrites",
     description:
       "Coaching LinkedIn, formation social selling et lead generation B2B pour fondateurs et consultants. Générez des leads qualifiés sur LinkedIn.",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     images: ["https://owrites.com/images/og-owrites-consulting.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com/consulting-formation-linkedin",
-    languages: { fr: "https://owrites.com/consulting-formation-linkedin" },
+    canonical: "https://owrites.com/consulting",
+    languages: { fr: "https://owrites.com/consulting" },
   },
 };
 
@@ -66,7 +66,7 @@ export default function ConsultingPage() {
               "@type": "FAQPage",
               mainEntity: [
                 { "@type": "Question", name: "Quelle différence entre le ghostwriting et le consulting lead generation LinkedIn ?", acceptedAnswer: { "@type": "Answer", text: "Le ghostwriting, c'est Owrites qui écrit pour vous. Le consulting lead generation LinkedIn, c'est Owrites qui vous accompagne pour maîtriser LinkedIn vous-même." } },
-                { "@type": "Question", name: "Combien de temps pour générer des leads qualifiés sur LinkedIn ?", acceptedAnswer: { "@type": "Answer", text: "Avec le coaching lead generation LinkedIn à 447€ HT/mois, la plupart des clients constatent leurs premiers leads qualifiés en 60 à 90 jours." } },
+                { "@type": "Question", name: "Combien de temps pour générer des leads qualifiés sur LinkedIn ?", acceptedAnswer: { "@type": "Answer", text: "Avec le coaching lead generation LinkedIn, la plupart des clients constatent leurs premiers leads qualifiés en 60 à 90 jours." } },
               ],
             },
           ]),
@@ -139,13 +139,9 @@ export default function ConsultingPage() {
                 <li key={item}><span className="ck">✓</span>{item}</li>
               ))}
             </ul>
-            <div className="offer-price">
-              <span className="price-amount">147€</span>
-              <span className="price-label">HT · Paiement unique</span>
-            </div>
             <div className="offer-cta">
-              <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-primary">
-                Demander un audit <ArrowIcon />
+              <Link href="/tarifs" className="btn-primary">
+                Voir les tarifs détaillés <ArrowIcon />
               </Link>
             </div>
           </div>
@@ -160,13 +156,9 @@ export default function ConsultingPage() {
                 <li key={item}><span className="ck">✓</span>{item}</li>
               ))}
             </ul>
-            <div className="offer-price">
-              <span className="price-amount">447€</span>
-              <span className="price-label">HT / mois · Engagement 3 mois</span>
-            </div>
             <div className="offer-cta">
-              <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-primary">
-                Démarrer le coaching <ArrowIcon />
+              <Link href="/tarifs" className="btn-primary">
+                Voir les tarifs détaillés <ArrowIcon />
               </Link>
             </div>
           </div>
@@ -180,13 +172,9 @@ export default function ConsultingPage() {
                 <li key={item}><span className="ck">✓</span>{item}</li>
               ))}
             </ul>
-            <div className="offer-price">
-              <span className="price-amount">1 847€</span>
-              <span className="price-label">HT · Par groupe ou individuel</span>
-            </div>
             <div className="offer-cta">
-              <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-primary">
-                Demander le programme <ArrowIcon />
+              <Link href="/tarifs" className="btn-primary">
+                Voir les tarifs détaillés <ArrowIcon />
               </Link>
             </div>
           </div>
@@ -203,6 +191,9 @@ export default function ConsultingPage() {
           <div className="cta-banner-actions">
             <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-dark">
               Réserver mon appel <ArrowIcon />
+            </Link>
+            <Link href="/blog" className="btn-outline" style={{ fontSize: 14 }}>
+              Lire nos articles LinkedIn →
             </Link>
           </div>
         </div>
@@ -222,10 +213,10 @@ export default function ConsultingPage() {
           </div>
           <div className="formations-grid">
             {[
-              { tag: "Social selling & lead generation", tagClass: "blue", title: "Formation Social Selling & Lead Generation LinkedIn", desc: "Du premier contact à la conversion — maîtrisez la prospection et la lead generation B2B sur LinkedIn.", items: ["Optimiser votre profil LinkedIn pour la lead generation", "Ciblage et campagne de prospection LinkedIn", "Maîtriser la vente et le lead generation B2B", "Ligne éditoriale pour attirer des leads qualifiés", "Engager le dialogue avec vos prospects idéaux"], duration: "12h30", price: "1 847€", delay: "" },
-              { tag: "Personal branding & leads", tagClass: "orange", title: "Formation Personal Branding & Lead Generation LinkedIn", desc: "Construisez votre marque personnelle pour attirer des leads qualifiés — positionnement, contenu et stratégie d'influence LinkedIn.", items: ["Définir votre positionnement pour le lead generation", "Créer des publications qui génèrent des leads", "Construire votre autorité pour attirer des prospects", "Stratégie de contenu LinkedIn long terme", "Mesurer vos métriques de lead generation"], duration: "10h", price: "1 497€", delay: " s1" },
-              { tag: "Community management", tagClass: "blue", title: "Formation Community Management LinkedIn", desc: "Gérez votre page entreprise LinkedIn et vos réseaux sociaux pour maximiser la visibilité et la lead generation.", items: ["Objectif de chaque réseau social pour le lead generation", "Optimiser vos comptes sociaux professionnels", "Structurer votre ligne éditoriale", "Calendrier éditorial mensuel orienté leads", "Analyser les performances et les conversions"], duration: "15h", price: "2 197€", delay: " s2" },
-              { tag: "Prospection & lead generation B2B", tagClass: "orange", title: "Formation Prospection, Vente & Lead Generation B2B", desc: "LinkedIn, emailing et vente consultative — de la lead generation à la conclusion de ventes B2B.", items: ["Générer des leads qualifiés sur LinkedIn", "Campagnes d'emailing B2B pour le lead generation", "Maîtriser la vente consultative", "Négocier et conclure les ventes complexes", "Suivi CRM et analyse des leads générés"], duration: "22h", price: "3 297€", delay: " s3" },
+              { tag: "Social selling & lead generation", tagClass: "blue", title: "Formation Social Selling & Lead Generation LinkedIn", desc: "Du premier contact à la conversion — maîtrisez la prospection et la lead generation B2B sur LinkedIn.", items: ["Optimiser votre profil LinkedIn pour la lead generation", "Ciblage et campagne de prospection LinkedIn", "Maîtriser la vente et le lead generation B2B", "Ligne éditoriale pour attirer des leads qualifiés", "Engager le dialogue avec vos prospects idéaux"], duration: "12h30", delay: "" },
+              { tag: "Personal branding & leads", tagClass: "orange", title: "Formation Personal Branding & Lead Generation LinkedIn", desc: "Construisez votre marque personnelle pour attirer des leads qualifiés — positionnement, contenu et stratégie d'influence LinkedIn.", items: ["Définir votre positionnement pour le lead generation", "Créer des publications qui génèrent des leads", "Construire votre autorité pour attirer des prospects", "Stratégie de contenu LinkedIn long terme", "Mesurer vos métriques de lead generation"], duration: "10h", delay: " s1" },
+              { tag: "Community management", tagClass: "blue", title: "Formation Community Management LinkedIn", desc: "Gérez votre page entreprise LinkedIn et vos réseaux sociaux pour maximiser la visibilité et la lead generation.", items: ["Objectif de chaque réseau social pour le lead generation", "Optimiser vos comptes sociaux professionnels", "Structurer votre ligne éditoriale", "Calendrier éditorial mensuel orienté leads", "Analyser les performances et les conversions"], duration: "15h", delay: " s2" },
+              { tag: "Prospection & lead generation B2B", tagClass: "orange", title: "Formation Prospection, Vente & Lead Generation B2B", desc: "LinkedIn, emailing et vente consultative — de la lead generation à la conclusion de ventes B2B.", items: ["Générer des leads qualifiés sur LinkedIn", "Campagnes d'emailing B2B pour le lead generation", "Maîtriser la vente consultative", "Négocier et conclure les ventes complexes", "Suivi CRM et analyse des leads générés"], duration: "22h", delay: " s3" },
             ].map((f) => (
               <div key={f.title} className={`fcard fade-up${f.delay}`}>
                 <div className={`fcard-tag ${f.tagClass}`}>{f.tag}</div>
@@ -236,15 +227,14 @@ export default function ConsultingPage() {
                 </ul>
                 <div className="fcard-meta">
                   <span>📚 <strong>{f.duration}</strong></span>
-                  <span>💶 <strong>{f.price}</strong> HT</span>
                   <span>👤 Groupe ou individuel</span>
                 </div>
               </div>
             ))}
           </div>
           <div className="formations-cta fade-up">
-            <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-primary">
-              Demander un programme lead generation sur-mesure <ArrowIcon />
+            <Link href="/tarifs#formations" className="btn-primary">
+              Voir les tarifs des formations <ArrowIcon />
             </Link>
           </div>
         </div>
@@ -309,9 +299,12 @@ export default function ConsultingPage() {
               </div>
             ))}
           </div>
-          <div className="testi-cta fade-up">
+          <div className="testi-cta fade-up" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link href={CALENDLY} target="_blank" rel="noopener" className="btn-white">
               Rejoindre nos clients satisfaits <ArrowIcon />
+            </Link>
+            <Link href="/etude-de-cas/hostlyft" className="btn-outline-white">
+              Découvrez comment Hostlyft a généré des leads →
             </Link>
           </div>
         </div>

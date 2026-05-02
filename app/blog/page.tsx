@@ -199,7 +199,7 @@ export default function BlogPage({
           <p className="text-xs text-gray-500 mb-4">
             Réservez un appel gratuit — on analyse votre profil et on vous donne un plan d&apos;action concret.
           </p>
-          <Link href="/contact" className="btn-primary text-sm">
+          <Link href="https://calendly.com/olaniyanolaide/discovery-call" target="_blank" rel="noopener" className="btn-primary text-sm">
             Réserver un appel →
           </Link>
         </div>

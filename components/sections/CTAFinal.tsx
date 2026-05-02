@@ -85,14 +85,18 @@ export default function CTAFinal() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
-          <a
-            href="https://www.olaidewrites.com/projects/linkedin-lead-generation-case-study"
-            target="_blank"
-            rel="noopener"
+          <Link
+            href="/etude-de-cas/hostlyft"
             className="btn-dark"
           >
             Voir l&apos;étude de cas Hostlyft
-          </a>
+          </Link>
+          <Link
+            href="/blog"
+            className="btn-outline-white"
+          >
+            Lire nos articles LinkedIn
+          </Link>
         </div>
       </div>
     </section>

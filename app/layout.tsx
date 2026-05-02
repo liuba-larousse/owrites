@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Owrites",
   },
   description:
-    "Ghostwriter LinkedIn professionnel en français pour fondateurs et consultants B2B. Générez des leads qualifiés, développez votre personal branding et votre autorité sur LinkedIn. 100% organique.",
+    "Ghostwriter LinkedIn pour fondateurs et consultants B2B. Générez des leads qualifiés et développez votre personal branding sur LinkedIn. 100% organique.",
   keywords: [
     "ghostwriting LinkedIn",
     "ghostwriter LinkedIn France",
