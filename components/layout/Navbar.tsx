@@ -28,7 +28,7 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: "16px 48px",
+        padding: "16px clamp(20px, 4vw, 48px)",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",

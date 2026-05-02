@@ -641,4 +641,9 @@
   .pricing-root .toggle-section { padding: 0 20px; }
   .pricing-root .sticky-cta { display: flex; }
   .pricing-root .addons-grid { grid-template-columns: 1fr; }
+  .pricing-root .compare-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 12px; }
+  .pricing-root .cal-embed iframe { height: 500px; }
+  .pricing-root .fp-card { padding: 28px 24px; }
+  .pricing-root .addon { padding: 24px 20px; }
+  .pricing-root .plan { padding: 32px 28px; }
 }

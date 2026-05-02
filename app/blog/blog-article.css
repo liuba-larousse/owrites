@@ -418,4 +418,8 @@
   .blog-article-root .author-box { flex-direction: column; align-items: center; text-align: center; }
   .blog-article-root .compare-tbl { font-size: 12px; }
   .blog-article-root .compare-tbl td:first-child { white-space: normal; }
+  .blog-article-root .compare-tbl { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .blog-article-root .article-cta { padding: 32px 20px; }
+  .blog-article-root .toc { padding: 20px 24px; }
+  .blog-article-root .direct-answer { padding: 20px 22px; font-size: 15px; }
 }

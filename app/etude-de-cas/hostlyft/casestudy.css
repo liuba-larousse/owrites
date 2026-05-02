@@ -123,4 +123,9 @@
   .cs-root .img-grid { grid-template-columns: 1fr; }
   .cs-root .cs-cta { padding: 36px 20px; margin: 32px 0; }
   .cs-root .power-numbers { padding: 60px 20px; }
+  .cs-root .compare-tbl { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cs-root .strategy-step { padding: 24px 20px; }
+  .cs-root .client-card { padding: 24px 20px; }
+  .cs-root .goal-box { padding: 28px 20px; }
+  .cs-root .results-section { padding: 36px 20px; }
 }

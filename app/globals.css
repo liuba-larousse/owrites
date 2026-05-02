@@ -218,3 +218,17 @@ body {
   line-height: 1.5;
   font-style: italic;
 }
+
+/* ── Mobile responsive helpers ── */
+@media (max-width: 768px) {
+  .btn-primary, .btn-dark, .btn-white, .btn-outline-white {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Table overflow on mobile */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

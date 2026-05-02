@@ -9,7 +9,8 @@ export default function CalendlySection() {
   return (
     <section
       id="contact"
-      style={{ background: "var(--off-white)", padding: "100px 48px" }}
+      style={{ background: "var(--off-white)", padding: "100px clamp(20px, 4vw, 48px)" }}
+      className="calendly-section-wrap"
     >
       <style>{`
         @media (max-width: 1024px) {
@@ -17,7 +18,10 @@ export default function CalendlySection() {
         }
         @media (max-width: 768px) {
           .calendly-section-wrap { padding: 60px 20px !important; }
-          .calendly-embed-frame { height: 560px !important; }
+          .calendly-embed-frame { height: 500px !important; min-height: 400px !important; }
+        }
+        @media (max-width: 480px) {
+          .calendly-embed-frame { height: 450px !important; }
         }
       `}</style>
       <div

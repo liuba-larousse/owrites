@@ -38,6 +38,7 @@ export default function Audience() {
         }
         @media (max-width: 768px) {
           .audience-section { padding: 60px 20px !important; }
+          .audience-grid > div { padding: 28px 24px !important; }
         }
       `}</style>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>

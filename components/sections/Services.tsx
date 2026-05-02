@@ -63,6 +63,7 @@ export default function Services() {
         @media (max-width: 768px) {
           .services-inner { padding: 60px 20px !important; }
           .services-grid { grid-template-columns: 1fr !important; }
+          .services-grid > div { padding: 28px 24px !important; }
         }
       `}</style>
       <div style={{ maxWidth: 1280, margin: "0 auto" }} className="services-inner">

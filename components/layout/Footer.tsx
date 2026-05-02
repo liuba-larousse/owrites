@@ -18,7 +18,7 @@ export default function Footer() {
         style={{
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "56px 48px 36px",
+          padding: "56px clamp(20px, 4vw, 48px) 36px",
         }}
       >
         <div
@@ -28,6 +28,7 @@ export default function Footer() {
             alignItems: "center",
             flexWrap: "wrap",
             gap: 20,
+            textAlign: "center" as const,
           }}
         >
           {/* Logo */}
@@ -50,7 +51,7 @@ export default function Footer() {
           <nav
             style={{
               display: "flex",
-              gap: 28,
+              gap: "clamp(16px, 2vw, 28px)",
               flexWrap: "wrap",
               justifyContent: "center",
             }}
