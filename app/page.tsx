@@ -12,6 +12,7 @@ import Results from "@/components/sections/Results";
 import CaseStudy from "@/components/sections/CaseStudy";
 import Testimonials from "@/components/sections/Testimonials";
 import Manifesto from "@/components/sections/Manifesto";
+import BlogPreview from "@/components/sections/BlogPreview";
 import FAQ from "@/components/sections/FAQ";
 import CalendlySection from "@/components/sections/CalendlySection";
 import CTAFinal from "@/components/sections/CTAFinal";
@@ -37,6 +38,7 @@ export default function HomePage() {
       <CaseStudy />
       <Testimonials />
       <Manifesto />
+      <BlogPreview />
       <FAQ />
       <CalendlySection />
       <CTAFinal />
