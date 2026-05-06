@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "./casestudy.css";
 
 const CALENDLY = "https://calendly.com/olaniyanolaide/discovery-call";
@@ -79,13 +80,11 @@ export default function CaseStudyHostlyftPage() {
             </div>
           </div>
           <div className="cs-hero-visual">
-            <div className="cs-profile-card">
-              <span className="ph-icon">📸</span>
-              <span className="ph-label">IMAGE: Screenshot du profil LinkedIn optimisé de Hostlyft — titre SEO, banner professionnel, section À propos réécrite.</span>
+            <div className="cs-profile-card" style={{ padding: 0, overflow: "hidden" }}>
+              <Image src="/profil-optimise.png" alt="Profil LinkedIn optimisé de Hostlyft — titre SEO, banner Revenue & Listing Optimization for Vacation Rentals" width={600} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
-            <div className="cs-profile-card">
-              <span className="ph-icon">📊</span>
-              <span className="ph-label">IMAGE: Screenshot LinkedIn analytics — courbes d&apos;impressions, vues de profil et apparitions en recherche sur 90 jours.</span>
+            <div className="cs-profile-card" style={{ padding: 0, overflow: "hidden" }}>
+              <Image src="/linkedin-analytique.png" alt="LinkedIn analytics — 31 916 impressions cumulées, courbe de croissance sur 90 jours" width={600} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
           </div>
         </div>
@@ -145,8 +144,12 @@ export default function CaseStudyHostlyftPage() {
           </ul>
           <p>Résultat : un message clair qui résonne immédiatement avec l&apos;audience cible.</p>
           <div className="img-grid">
-            <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Publication LinkedIn avec positionnement &quot;revenue partner&quot; — engagement visible.</span></div>
-            <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Publication &quot;3 Ways to Lift ADR&quot; — contenu éducatif STR avec likes et commentaires.</span></div>
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/linkedin-post-performance.png" alt="Publication LinkedIn Hostlyft avec positionnement revenue partner — engagement visible" width={600} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/publication-3-ways-adr.png" alt="Publication LinkedIn 3 Ways to Lift ADR — contenu éducatif STR, 11 likes, 13 commentaires" width={600} height={700} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </div>
         </div>
 
@@ -161,7 +164,14 @@ export default function CaseStudyHostlyftPage() {
             <li><strong>Expériences</strong> repositionnées pour la crédibilité</li>
             <li>Le contenu visuel a été <strong>entièrement revu</strong> (banner, photo)</li>
           </ul>
-          <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Screenshot complet du profil LinkedIn optimisé — banner, titre SEO, section À propos réécrite.</span></div>
+          <div className="img-grid">
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/profil-optimise.png" alt="Profil LinkedIn optimisé Hostlyft — banner, titre SEO, photo professionnelle" width={600} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/profil-optimise-2.png" alt="Section À propos LinkedIn réécrite — positionnement revenue partner, services détaillés" width={600} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+          </div>
         </div>
 
         {/* Step 3 */}
@@ -177,8 +187,12 @@ export default function CaseStudyHostlyftPage() {
           </ul>
           <h4 style={{ fontSize: 14, color: "var(--orange)", textTransform: "uppercase", letterSpacing: 1, marginTop: 24 }}>Top performing posts</h4>
           <div className="img-grid">
-            <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Post le plus performant (~6K impressions) — contenu STR/revenue management.</span></div>
-            <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Autre post performant (~3K impressions) — question engageante sur le revenue management.</span></div>
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/post-top-performant.png" alt="Top performing posts LinkedIn Hostlyft — 9K, 5K et 3K impressions par post" width={600} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
+            <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+              <Image src="/analytique-dashboard.png" alt="Engagement LinkedIn Hostlyft — 633 engagements sociaux, 429 réactions, 166 commentaires" width={600} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+            </div>
           </div>
         </div>
 
@@ -193,7 +207,9 @@ export default function CaseStudyHostlyftPage() {
             <li>Commentaires stratégiques pour <strong>augmenter la visibilité</strong></li>
             <li>Contenu planifié à l&apos;avance, validé avant chaque publication</li>
           </ul>
-          <div className="img-placeholder"><span className="ph-icon">📸</span><span className="ph-label">IMAGE: Calendrier éditorial LinkedIn de Hostlyft — vue mensuelle montrant les publications planifiées.</span></div>
+          <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--gray-200)" }}>
+            <Image src="/vue-profil.png" alt="Profile appearances LinkedIn Hostlyft — 3 717 apparitions, 14 apparitions en recherche" width={900} height={200} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
         </div>
 
         {/* Results */}
@@ -205,9 +221,8 @@ export default function CaseStudyHostlyftPage() {
             <div className="result-card"><div className="result-card-icon">🎯</div><div className="result-card-num orange">10+</div><div className="result-card-label">Leads STR inbound qualifiés</div></div>
           </div>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, textAlign: "center", marginTop: 20 }}>Impact principal : le client est passé d&apos;un profil invisible à une position de <strong style={{ color: "#fff" }}>trusted revenue partner</strong> dans l&apos;industrie STR.</p>
-          <div className="img-placeholder" style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.03)", marginTop: 28 }}>
-            <span className="ph-icon" style={{ opacity: 0.3 }}>📸</span>
-            <span className="ph-label" style={{ color: "rgba(255,255,255,0.3)" }}>IMAGE: Tableau de bord LinkedIn analytics — courbe des impressions sur 90 jours.</span>
+          <div style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", marginTop: 28 }}>
+            <Image src="/linkedin-analytique.png" alt="LinkedIn analytics Hostlyft — 31 916 impressions cumulées, courbe de croissance ascendante sur 90 jours" width={900} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
         </div>
 
