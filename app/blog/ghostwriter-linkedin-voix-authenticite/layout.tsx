@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     locale: "fr_FR",
-    url: "https://owrites.com/blog/ghostwriter-linkedin-voix-authenticite",
+    url: "https://owrites.co/blog/ghostwriter-linkedin-voix-authenticite",
     title: "Un ghostwriter LinkedIn gardera-t-il ma voix ? Authenticité expliquée — Owrites",
     description: "Comment un ghostwriter LinkedIn préserve votre voix et votre authenticité. Guide pour fondateurs B2B.",
-    images: [{ url: "https://owrites.com/images/og-blog-voix-authenticite.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://owrites.co/images/og-blog-voix-authenticite.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Un ghostwriter LinkedIn gardera-t-il ma voix ? — Owrites",
     description: "Voix, authenticité et ghostwriting LinkedIn. Comment ça marche vraiment pour les fondateurs B2B.",
-    images: ["https://owrites.com/images/og-blog-voix-authenticite.jpg"],
+    images: ["https://owrites.co/images/og-blog-voix-authenticite.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com/blog/ghostwriter-linkedin-voix-authenticite",
-    languages: { fr: "https://owrites.com/blog/ghostwriter-linkedin-voix-authenticite" },
+    canonical: "https://owrites.co/blog/ghostwriter-linkedin-voix-authenticite",
+    languages: { fr: "https://owrites.co/blog/ghostwriter-linkedin-voix-authenticite" },
   },
 };
 

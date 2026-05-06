@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://owrites.com/sitemap.xml",
+    sitemap: "https://owrites.co/sitemap.xml",
   };
 }

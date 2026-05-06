@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     locale: "fr_FR",
-    url: "https://owrites.com/etude-de-cas/hostlyft",
+    url: "https://owrites.co/etude-de-cas/hostlyft",
     title: "Étude de cas Hostlyft — Lead Generation LinkedIn en 90 jours",
     description: "16 900+ impressions, 10+ leads inbound. Comment le ghostwriting LinkedIn a transformé un profil invisible en canal d'acquisition.",
-    images: [{ url: "https://owrites.com/images/og-case-study-hostlyft.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://owrites.co/images/og-case-study-hostlyft.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Étude de cas Hostlyft — Lead Generation LinkedIn en 90 jours",
     description: "16 900+ impressions, 10+ leads STR inbound. Ghostwriting LinkedIn par Owrites.",
-    images: ["https://owrites.com/images/og-case-study-hostlyft.jpg"],
+    images: ["https://owrites.co/images/og-case-study-hostlyft.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com/etude-de-cas/hostlyft",
-    languages: { fr: "https://owrites.com/etude-de-cas/hostlyft" },
+    canonical: "https://owrites.co/etude-de-cas/hostlyft",
+    languages: { fr: "https://owrites.co/etude-de-cas/hostlyft" },
   },
 };
 

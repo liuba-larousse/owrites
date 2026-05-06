@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://owrites.com",
+    url: "https://owrites.co",
     siteName: "Owrites",
     title: "Owrites — Ghostwriter LinkedIn B2B France | Leads Qualifiés & Personal Branding",
     description:
       "Ghostwriting LinkedIn, optimisation de profil et stratégie de contenu pour fondateurs et consultants B2B. Des leads qualifiés en inbound, 100% organique.",
     images: [
       {
-        url: "https://owrites.com/images/og-owrites-ghostwriter-linkedin.jpg",
+        url: "https://owrites.co/images/og-owrites-ghostwriter-linkedin.jpg",
         width: 1200,
         height: 630,
         alt: "Owrites — Ghostwriter LinkedIn B2B France",
@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     title: "Owrites — Ghostwriter LinkedIn B2B France",
     description:
       "Ghostwriting LinkedIn pour fondateurs & consultants B2B. Leads qualifiés, personal branding, 100% organique.",
-    images: ["https://owrites.com/images/og-owrites-ghostwriter-linkedin.jpg"],
+    images: ["https://owrites.co/images/og-owrites-ghostwriter-linkedin.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com",
-    languages: { fr: "https://owrites.com" },
+    canonical: "https://owrites.co",
+    languages: { fr: "https://owrites.co" },
   },
 };
 
@@ -81,8 +81,8 @@ export default function RootLayout({
               name: "Owrites",
               description:
                 "Agence de ghostwriting LinkedIn et personal branding pour fondateurs et consultants B2B en France.",
-              url: "https://owrites.com",
-              logo: "https://owrites.com/images/owrites-logo.png",
+              url: "https://owrites.co",
+              logo: "https://owrites.co/images/owrites-logo.png",
               founder: { "@type": "Person", name: "Olaide Olaniyan" },
               areaServed: { "@type": "Country", name: "France" },
               serviceType: [

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(gh auth:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(ls -la public/*.png public/*.jpg)",
+      "Bash(ls:*)",
+      "Bash(mv \"Post le plus performant.png\" \"post-top-performant.png\")",
+      "Bash(mv \"analytique.png\" \"analytique-dashboard.png\")",
+      "Bash(mv \"linkedin analytique.png\" \"linkedin-analytique.png\")",
+      "Bash(mv \"publication 3 ways to lift ADR.png\" \"publication-3-ways-adr.png\")",
+      "Bash(mv \"screenshot titre SEO banner, a propos reecrite \\(2\\).png\" \"profil-optimise-2.png\")"
+    ]
+  }
+}

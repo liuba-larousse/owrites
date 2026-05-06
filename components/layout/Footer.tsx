@@ -94,6 +94,8 @@ export default function Footer() {
           © 2026 Owrites — Ghostwriter LinkedIn B2B France. Personal branding,
           génération de leads et stratégie de contenu pour fondateurs &amp;
           consultants.
+          {/* TODO: Add WhatsApp number and SIRET here */}
+          {/* <br />SIRET : XXXXXXXXX · WhatsApp : +33 X XX XX XX XX */}
         </div>
       </div>
     </footer>

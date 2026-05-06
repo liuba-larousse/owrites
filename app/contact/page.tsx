@@ -110,8 +110,8 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-6 space-y-3">
-                <a href="mailto:bonjour@owrites.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange transition-colors">
-                  <span>✉</span> bonjour@owrites.com
+                <a href="mailto:bonjour@owrites.co" className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange transition-colors">
+                  <span>✉</span> bonjour@owrites.co
                 </a>
                 <p className="text-xs text-gray-400">Réponse garantie en moins de 24h ouvrées</p>
               </div>

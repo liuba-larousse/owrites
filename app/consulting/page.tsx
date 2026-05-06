@@ -21,21 +21,21 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://owrites.com/consulting",
+    url: "https://owrites.co/consulting",
     title: "Consulting LinkedIn & Lead Generation B2B — Owrites",
     description:
       "Coaching LinkedIn, formation social selling et lead generation B2B pour fondateurs et consultants. Générez des leads qualifiés sur LinkedIn.",
-    images: [{ url: "https://owrites.com/images/og-owrites-consulting.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://owrites.co/images/og-owrites-consulting.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Consulting LinkedIn & Lead Generation B2B — Owrites",
     description: "Coaching LinkedIn, lead generation et formation social selling pour fondateurs B2B.",
-    images: ["https://owrites.com/images/og-owrites-consulting.jpg"],
+    images: ["https://owrites.co/images/og-owrites-consulting.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com/consulting",
-    languages: { fr: "https://owrites.com/consulting" },
+    canonical: "https://owrites.co/consulting",
+    languages: { fr: "https://owrites.co/consulting" },
   },
 };
 
@@ -56,7 +56,7 @@ export default function ConsultingPage() {
               "@context": "https://schema.org",
               "@type": "Service",
               name: "Consulting LinkedIn & Lead Generation B2B — Owrites",
-              provider: { "@type": "ProfessionalService", name: "Owrites", url: "https://owrites.com" },
+              provider: { "@type": "ProfessionalService", name: "Owrites", url: "https://owrites.co" },
               description: "Consulting LinkedIn, coaching personal branding, lead generation B2B et formation social selling pour fondateurs et consultants en France.",
               areaServed: { "@type": "Country", name: "France" },
               serviceType: ["Consulting LinkedIn", "LinkedIn Lead Generation", "Coaching Personal Branding", "Formation Social Selling", "Audit Profil LinkedIn"],

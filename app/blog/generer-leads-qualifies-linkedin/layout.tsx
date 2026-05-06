@@ -7,20 +7,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     locale: "fr_FR",
-    url: "https://owrites.com/blog/generer-leads-qualifies-linkedin",
+    url: "https://owrites.co/blog/generer-leads-qualifies-linkedin",
     title: "Comment générer des leads qualifiés sur LinkedIn en 2026 — Owrites",
     description: "Guide complet pour générer des leads qualifiés sur LinkedIn en 2026. Stratégie de contenu, social selling et lead generation B2B.",
-    images: [{ url: "https://owrites.com/images/og-blog-leads-linkedin-2026.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://owrites.co/images/og-blog-leads-linkedin-2026.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Comment générer des leads qualifiés sur LinkedIn en 2026",
     description: "Guide complet lead generation LinkedIn pour fondateurs et consultants B2B.",
-    images: ["https://owrites.com/images/og-blog-leads-linkedin-2026.jpg"],
+    images: ["https://owrites.co/images/og-blog-leads-linkedin-2026.jpg"],
   },
   alternates: {
-    canonical: "https://owrites.com/blog/generer-leads-qualifies-linkedin",
-    languages: { fr: "https://owrites.com/blog/generer-leads-qualifies-linkedin" },
+    canonical: "https://owrites.co/blog/generer-leads-qualifies-linkedin",
+    languages: { fr: "https://owrites.co/blog/generer-leads-qualifies-linkedin" },
   },
 };
 
