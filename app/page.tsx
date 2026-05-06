@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       <Hero />
       <ProofBar />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <About />
       <Services />
       <CTABand
