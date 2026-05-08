@@ -102,6 +102,9 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* Elfsight All-in-One Chat */}
+        <script src="https://elfsightcdn.com/platform.js" async />
+        <div className="elfsight-app-a9e2c15f-052d-435b-903f-b86b31eb9662" data-elfsight-app-lazy />
       </body>
     </html>
   );
