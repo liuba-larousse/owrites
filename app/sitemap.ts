@@ -11,5 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/cout-ghostwriter-linkedin-2026`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/generer-leads-qualifies-linkedin`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/ghostwriter-linkedin-voix-authenticite`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/optimisation-profil-linkedin`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 }
