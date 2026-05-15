@@ -1,0 +1,149 @@
+/* ─── MERCI (Thank You) Page ─── */
+
+.merci-page {
+  --merci-orange: #FF5202;
+  --merci-dark: #0A0A0A;
+  --merci-white: #FFFFFF;
+  --merci-serif: 'Playfair Display', Georgia, serif;
+  --merci-sans: 'Manrope', system-ui, sans-serif;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+  font-family: var(--merci-sans);
+  background: var(--merci-dark);
+  color: var(--merci-white);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+.merci-check {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 82, 2, 0.12);
+  border: 2px solid var(--merci-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  animation: merci-pop 0.4s ease;
+}
+
+.merci-check svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--merci-orange);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes merci-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.merci-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--merci-orange);
+  margin-bottom: 16px;
+}
+
+.merci-page h1 {
+  font-family: var(--merci-serif);
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--merci-white);
+  margin-bottom: 16px;
+  max-width: 560px;
+}
+
+.merci-page h1 em {
+  color: var(--merci-orange);
+  font-style: italic;
+}
+
+.merci-sub {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 440px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+.merci-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.merci-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.merci-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--merci-orange);
+  color: var(--merci-white);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.merci-step-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--merci-white);
+  margin-bottom: 3px;
+}
+
+.merci-step-text span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.5;
+}
+
+.merci-back {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.merci-back:hover { color: var(--merci-orange); }
+
+.merci-footer {
+  position: absolute;
+  bottom: 24px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+}
