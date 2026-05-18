@@ -86,6 +86,22 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
           }),
         }}
       />
+      {/* Fire Google Ads conversion when Calendly booking is confirmed */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('message', function(e) {
+              if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-18163036620',
+                  'value': 150.0,
+                  'currency': 'EUR'
+                });
+              }
+            });
+          `,
+        }}
+      />
       {children}
       {/* Elfsight All-in-One Chat */}
       <script src="https://elfsightcdn.com/platform.js" async />
