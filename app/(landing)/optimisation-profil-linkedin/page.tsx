@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./linkedin-profil.css";
 
 const CALENDLY_URL = "https://calendly.com/olaniyanolaide/discovery-call";
@@ -7,7 +8,8 @@ export default function OptimisationProfilLinkedinPage() {
     <>
       {/* ANNOUNCEMENT BAR */}
       <div className="lp-bar">
-        Offre ponctuelle &middot; 150&euro; HT &middot; Sans abonnement &middot; Livraison en 7 jours
+        Offre ponctuelle &middot; 150&euro; HT &middot; Sans abonnement &middot; Livraison en 7
+        jours
       </div>
 
       {/* HERO */}
@@ -34,6 +36,27 @@ export default function OptimisationProfilLinkedinPage() {
           </div>
         </div>
       </section>
+
+      {/* FOUNDER STRIP */}
+      <div className="lp-founder-strip">
+        <div className="lp-founder-inner">
+          <Image
+            src="/images/lp/olaide-photo.jpg"
+            alt="Olaide — Expert LinkedIn B2B"
+            width={72}
+            height={72}
+            className="lp-founder-photo"
+          />
+          <div className="lp-founder-text">
+            <blockquote>
+              &ldquo;J&rsquo;ai accompagn&eacute; plus de 20 fondateurs et consultants B2B
+              francophones. Chaque profil est r&eacute;&eacute;crit apr&egrave;s un appel de 30 min
+              &mdash; dans votre voix, pas la mienne.&rdquo;
+            </blockquote>
+            <cite>Olaide &middot; Expert Ghostwriting &amp; Optimisation LinkedIn B2B</cite>
+          </div>
+        </div>
+      </div>
 
       {/* METRICS STRIP */}
       <div className="lp-metrics">
@@ -102,7 +125,7 @@ export default function OptimisationProfilLinkedinPage() {
               <span className="icon">&#x1F50D;</span>
               <p>
                 Vous n&rsquo;apparaissez pas dans les recherches LinkedIn de vos clients
-                id&eacute;aux &mdash; parce que votre profil n&rsquo;est pas optimis&eacute; SEO.
+                id&eacute;aux &mdash; profil non optimis&eacute; SEO.
               </p>
             </div>
           </div>
@@ -167,18 +190,179 @@ export default function OptimisationProfilLinkedinPage() {
         </div>
       </section>
 
-      {/* PROOF */}
+      {/* PROOF SECTION */}
       <section className="lp-proof">
         <div className="lp-container">
-          <span className="lp-section-label">R&eacute;sultats</span>
+          <span className="lp-section-label">R&eacute;sultats r&eacute;els</span>
           <h2>
-            Ce que &ccedil;a change <em>concr&egrave;tement</em>
+            Deux clients, <em>deux transformations</em>
           </h2>
           <p className="lp-section-intro">
-            Des m&eacute;triques r&eacute;elles, sur des profils r&eacute;els. Pas des estimations
-            &mdash; des r&eacute;sultats mesur&eacute;s sur nos clients.
+            Voici ce qu&rsquo;une optimisation change concr&egrave;tement &mdash; sur de vrais
+            profils, avec de vrais r&eacute;sultats.
           </p>
-          <div className="lp-metrics-light">
+
+          {/* CASE 1: LAMIAA */}
+          <div className="lp-case" style={{ marginTop: 48 }}>
+            <div className="lp-case-header">
+              <span className="lp-case-badge lp-case-badge--orange">
+                &Eacute;tude de cas 1
+              </span>
+              <span className="lp-case-meta">
+                <strong>Lamiaa Bennis</strong> &middot; Consultante Senior Logistique &amp; Commerce
+                International &middot; Banque Mondiale
+              </span>
+            </div>
+            <div className="lp-ba-wrapper">
+              <div className="lp-ba-item">
+                <span className="lp-ba-label lp-ba-label--avant">&#10007; Avant</span>
+                <Image
+                  src="/images/lp/lamiaa-avant.png"
+                  alt="Profil LinkedIn avant"
+                  width={680}
+                  height={400}
+                  className="lp-ba-img"
+                />
+                <div className="lp-ba-annotation">
+                  Banni&egrave;re g&eacute;n&eacute;rique &middot; Titre descriptif &middot; Profil
+                  invisible dans les recherches
+                </div>
+              </div>
+              <div className="lp-ba-divider">&rarr; Apr&egrave;s optimisation Owrites</div>
+              <div className="lp-ba-item">
+                <span className="lp-ba-label lp-ba-label--apres">&#10003; Apr&egrave;s</span>
+                <Image
+                  src="/images/lp/lamiaa-apres.png"
+                  alt="Profil LinkedIn après"
+                  width={680}
+                  height={400}
+                  className="lp-ba-img"
+                />
+                <div className="lp-ba-annotation">
+                  <strong>
+                    Banni&egrave;re de marque &middot; Titre autorit&eacute; &middot;
+                    D&eacute;claration de valeur claire
+                  </strong>
+                </div>
+              </div>
+            </div>
+
+            {/* UPWORK REVIEW */}
+            <div className="lp-upwork-review">
+              <div className="lp-upwork-header">
+                <span className="lp-upwork-badge">&#10003; Avis Upwork v&eacute;rifi&eacute;</span>
+                <span className="lp-upwork-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span className="lp-upwork-meta">5.0 &middot; F&eacute;v 2026</span>
+              </div>
+              <blockquote>
+                &ldquo;Travailler avec Olaide a &eacute;t&eacute; simple et efficace. Il a
+                l&rsquo;esprit ouvert, s&rsquo;adapte aux exigences sectorielles de son client, tout
+                en recommandant les meilleures pratiques. Je continuerai &agrave; travailler avec
+                lui.&rdquo;
+              </blockquote>
+              <cite>
+                <strong>Lamiaa Bennis</strong> &middot; Consultante Logistique Senior &middot; Banque
+                Mondiale
+              </cite>
+            </div>
+          </div>
+
+          <hr className="lp-section-divider" />
+
+          {/* CASE 2: HOSTLYFT */}
+          <div className="lp-case">
+            <div className="lp-case-header">
+              <span className="lp-case-badge lp-case-badge--dark">
+                &Eacute;tude de cas 2
+              </span>
+              <span className="lp-case-meta">
+                <strong>Co-Fondatrice &middot; Hostlyft</strong> &middot; Gestionnaire de revenus
+                Airbnb &amp; Location saisonni&egrave;re
+              </span>
+            </div>
+            <div className="lp-ba-wrapper">
+              <div className="lp-ba-item">
+                <span className="lp-ba-label lp-ba-label--avant">&#10007; Avant</span>
+                <Image
+                  src="/images/lp/hostlyft-avant-apres.png"
+                  alt="Avant / Après Hostlyft LinkedIn"
+                  width={680}
+                  height={400}
+                  className="lp-ba-img"
+                />
+                <div className="lp-ba-annotation">
+                  10 vues de profil &middot; 0 impressions &middot; Titre g&eacute;n&eacute;rique
+                  sans positionnement
+                </div>
+              </div>
+            </div>
+            <p className="lp-ba-caption">
+              <strong>
+                10 &rarr; 299 vues de profil &middot; 0 &rarr; 403 impressions de posts &middot; 79
+                apparitions dans les recherches
+              </strong>
+            </p>
+          </div>
+
+          <hr className="lp-section-divider" />
+
+          {/* CASE 3: LOGISTICS CONSULTANT */}
+          <div className="lp-case">
+            <div className="lp-case-header">
+              <span className="lp-case-badge lp-case-badge--grey">
+                &Eacute;tude de cas 3
+              </span>
+              <span className="lp-case-meta">
+                <strong>Consultante Senior</strong> &middot; Logistique &amp; Facilitation du
+                Commerce &middot; 20+ ans &middot; Banque Mondiale
+              </span>
+            </div>
+            <div className="lp-cs-comparison">
+              <div className="lp-cs-col lp-cs-col--avant">
+                <span className="lp-cs-col-tag">Avant</span>
+                <h4>Profil g&eacute;n&eacute;rique</h4>
+                <ul>
+                  <li>Titre = description de poste sans valeur</li>
+                  <li>R&eacute;sum&eacute; = liste de t&acirc;ches sans impact</li>
+                  <li>Banni&egrave;re = paysage, aucun message pro</li>
+                  <li>Exp&eacute;riences = responsabilit&eacute;s sans r&eacute;sultats</li>
+                  <li>Invisible dans les recherches LinkedIn</li>
+                </ul>
+              </div>
+              <div className="lp-cs-col lp-cs-col--apres">
+                <span className="lp-cs-col-tag">Apr&egrave;s</span>
+                <h4>Profil positionn&eacute;</h4>
+                <ul>
+                  <li>Titre = d&eacute;claration d&rsquo;autorit&eacute; sectorielle</li>
+                  <li>R&eacute;sum&eacute; = pitch segment&eacute; par audience cible</li>
+                  <li>Banni&egrave;re = visuelle de marque avec message fort</li>
+                  <li>Exp&eacute;riences = projets nomm&eacute;s + r&eacute;sultats chiffr&eacute;s</li>
+                  <li>Appara&icirc;t dans les recherches cibles</li>
+                </ul>
+              </div>
+            </div>
+            <div className="lp-cs-results-grid">
+              <div className="lp-cs-result">
+                <div className="lp-cs-result-num">+340%</div>
+                <div className="lp-cs-result-label">Vues de profil</div>
+              </div>
+              <div className="lp-cs-result">
+                <div className="lp-cs-result-num">7</div>
+                <div className="lp-cs-result-label">Demandes institutionnelles</div>
+              </div>
+              <div className="lp-cs-result">
+                <div className="lp-cs-result-num">3</div>
+                <div className="lp-cs-result-label">Invitations &agrave; des projets</div>
+              </div>
+              <div className="lp-cs-result">
+                <div className="lp-cs-result-num">2</div>
+                <div className="lp-cs-result-label">Invitations comme intervenante</div>
+              </div>
+            </div>
+          </div>
+
+          {/* AGGREGATE METRICS */}
+          <div className="lp-proof-metrics">
             <div className="lp-metric-card">
               <div className="val">
                 <em>+95%</em>
@@ -202,36 +386,6 @@ export default function OptimisationProfilLinkedinPage() {
                 16<em>k</em>
               </div>
               <div className="lbl">Impressions organiques</div>
-            </div>
-          </div>
-          <div className="lp-testimonials">
-            <div className="lp-testimonial">
-              <blockquote>
-                &ldquo;En 3 mois, mes impressions LinkedIn sont pass&eacute;es de 2 000 &agrave;
-                18 000 par mois. Owrites a compl&egrave;tement transform&eacute; ma pr&eacute;sence
-                sur la plateforme.&rdquo;
-              </blockquote>
-              <div className="lp-testimonial-author">
-                <div className="lp-author-avatar">AM</div>
-                <div className="lp-author-info">
-                  <div className="name">Alexandre Morin</div>
-                  <div className="role">Fondateur &middot; Morin Conseil</div>
-                </div>
-              </div>
-            </div>
-            <div className="lp-testimonial">
-              <blockquote>
-                &ldquo;Je re&ccedil;ois maintenant 4 &agrave; 6 messages de prospects
-                qualifi&eacute;s par semaine, sans aucune prospection de ma part. Le contenu parle
-                vraiment &agrave; mes clients id&eacute;aux.&rdquo;
-              </blockquote>
-              <div className="lp-testimonial-author">
-                <div className="lp-author-avatar">CF</div>
-                <div className="lp-author-info">
-                  <div className="name">Claire Fontaine</div>
-                  <div className="role">DG &middot; Fontaine RH</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -262,7 +416,9 @@ export default function OptimisationProfilLinkedinPage() {
                 <div className="lp-price-amount">
                   <span>150&euro;</span>
                 </div>
-                <div className="lp-price-note">HT &middot; Paiement apr&egrave;s l&rsquo;appel</div>
+                <div className="lp-price-note">
+                  HT &middot; Paiement apr&egrave;s l&rsquo;appel
+                </div>
               </div>
             </div>
             <div className="lp-offer-features">
@@ -318,8 +474,8 @@ export default function OptimisationProfilLinkedinPage() {
               <p className="lp-faq-answer">
                 Oui. L&rsquo;appel de capture de voix est con&ccedil;u pr&eacute;cis&eacute;ment
                 pour &ccedil;a. On prend le temps de comprendre votre fa&ccedil;on de parler, vos
-                tournures de phrases, votre positionnement. Chaque mot du profil est valid&eacute;
-                par vous avant livraison.
+                tournures, votre positionnement. Chaque mot est valid&eacute; par vous avant
+                livraison.
               </p>
             </details>
             <details className="lp-faq-item">
@@ -338,10 +494,9 @@ export default function OptimisationProfilLinkedinPage() {
                 <span className="icon">+</span>
               </summary>
               <p className="lp-faq-answer">
-                Une r&eacute;vision compl&egrave;te est incluse dans l&rsquo;offre. Si apr&egrave;s
-                r&eacute;vision vous n&rsquo;&ecirc;tes toujours pas satisfait, on retravaille
-                jusqu&rsquo;&agrave; ce que ce soit parfait. Votre satisfaction n&rsquo;est pas
-                n&eacute;gociable.
+                Une r&eacute;vision compl&egrave;te est incluse. Si apr&egrave;s r&eacute;vision vous
+                n&rsquo;&ecirc;tes toujours pas satisfait, on retravaille jusqu&rsquo;&agrave; ce
+                que ce soit parfait.
               </p>
             </details>
             <details className="lp-faq-item">
@@ -370,9 +525,9 @@ export default function OptimisationProfilLinkedinPage() {
                 <span className="icon">+</span>
               </summary>
               <p className="lp-faq-answer">
-                Non, cette offre couvre uniquement l&rsquo;optimisation du profil (titre,
-                r&eacute;sum&eacute;, exp&eacute;riences). Pour le ghostwriting de publications
-                LinkedIn, d&eacute;couvrez nos packages mensuels d&egrave;s 297&euro;/mois.
+                Non, cette offre couvre uniquement l&rsquo;optimisation du profil. Pour le
+                ghostwriting de publications LinkedIn, d&eacute;couvrez nos packages mensuels
+                d&egrave;s 297&euro;/mois.
               </p>
             </details>
           </div>
