@@ -8,8 +8,8 @@ export default function OptimisationProfilLinkedinPage() {
     <>
       {/* ANNOUNCEMENT BAR */}
       <div className="lp-bar">
-        Offre ponctuelle &middot; 150&euro; HT &middot; Sans abonnement &middot; Livraison en 7
-        jours
+        &#x26A1; Places limit&eacute;es &mdash; 3 optimisations par mois &middot; 150&euro; HT
+        &middot; Livraison en 7 jours
       </div>
 
       {/* HERO */}
@@ -32,6 +32,21 @@ export default function OptimisationProfilLinkedinPage() {
               <span>Paiement apr&egrave;s validation</span>
               <span>1 r&eacute;vision incluse</span>
               <span>Livr&eacute; en 7 jours</span>
+            </div>
+            <div
+              style={{
+                marginTop: 12,
+                background: "rgba(255,82,2,0.15)",
+                border: "1px solid rgba(255,82,2,0.3)",
+                borderRadius: 8,
+                padding: "8px 20px",
+                fontSize: 13,
+                color: "#FF6B1A",
+                fontWeight: 600,
+              }}
+            >
+              &#x26A1; Il reste{" "}
+              <strong style={{ color: "#fff" }}>2 places disponibles</strong> ce mois-ci
             </div>
           </div>
         </div>
@@ -195,64 +210,246 @@ export default function OptimisationProfilLinkedinPage() {
         <div className="lp-container">
           <span className="lp-section-label">R&eacute;sultats r&eacute;els</span>
           <h2>
-            Deux clients, <em>deux transformations</em>
+            Ce que &ccedil;a change &mdash; <em>sur un vrai profil</em>
           </h2>
           <p className="lp-section-intro">
-            Voici ce qu&rsquo;une optimisation change concr&egrave;tement &mdash; sur de vrais
-            profils, avec de vrais r&eacute;sultats.
+            Inna Myruta, fondatrice d&rsquo;UkraineMarriage, a confi&eacute; son profil LinkedIn
+            &agrave; Owrites. Voici les 4 sections r&eacute;&eacute;crites &mdash; avant et
+            apr&egrave;s.
           </p>
 
-          {/* CASE 1: LAMIAA */}
-          <div className="lp-case" style={{ marginTop: 48 }}>
+          <div style={{ marginTop: 48 }}>
             <div className="lp-case-header">
               <span className="lp-case-badge lp-case-badge--orange">
-                &Eacute;tude de cas 1
+                &Eacute;tude de cas
               </span>
               <span className="lp-case-meta">
-                <strong>Lamiaa Bennis</strong> &middot; Consultante Senior Logistique &amp; Commerce
-                International &middot; Banque Mondiale
+                <strong>Inna Myruta</strong> &middot; Fondatrice UkraineMarriage &middot; Agence
+                matrimoniale franco-ukrainienne &middot; France
               </span>
             </div>
-            <div className="lp-ba-wrapper">
-              <div className="lp-ba-item">
-                <span className="lp-ba-label lp-ba-label--avant">&#10007; Avant</span>
-                <Image
-                  src="/images/lp/lamiaa-avant.png"
-                  alt="Profil LinkedIn avant"
-                  width={680}
-                  height={400}
-                  className="lp-ba-img"
-                />
-                <div className="lp-ba-annotation">
-                  Banni&egrave;re g&eacute;n&eacute;rique &middot; Titre descriptif &middot; Profil
-                  invisible dans les recherches
+
+            {/* 01 BANNIERE + TITRE */}
+            <div className="lp-comp-block">
+              <div className="lp-comp-header">
+                <span className="lp-comp-num">01</span>
+                <div>
+                  <div className="lp-comp-title">Banni&egrave;re &amp; Titre LinkedIn</div>
+                  <div className="lp-comp-sub">
+                    Premi&egrave;re impression &mdash; 3 secondes pour capter l&rsquo;attention
+                  </div>
                 </div>
               </div>
-              <div className="lp-ba-divider">&rarr; Apr&egrave;s optimisation Owrites</div>
-              <div className="lp-ba-item">
-                <span className="lp-ba-label lp-ba-label--apres">&#10003; Apr&egrave;s</span>
-                <Image
-                  src="/images/lp/lamiaa-apres.png"
-                  alt="Profil LinkedIn après"
-                  width={680}
-                  height={400}
-                  className="lp-ba-img"
-                />
-                <div className="lp-ba-annotation">
-                  <strong>
-                    Banni&egrave;re de marque &middot; Titre autorit&eacute; &middot;
-                    D&eacute;claration de valeur claire
-                  </strong>
+              <div className="lp-comp-grid">
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-avant-tag">&#10007; Avant</div>
+                  <Image
+                    src="/images/lp/inna-banniere-avant.png"
+                    alt="Banni&egrave;re avant"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#10060; Photo de stock romantique &middot; Titre confus FR/EN avec emojis
+                    &middot; Invisible dans les recherches LinkedIn.
+                  </div>
+                </div>
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-apres-tag">&#10003; Apr&egrave;s</div>
+                  <Image
+                    src="/images/lp/inna-banniere-apres.png"
+                    alt="Banni&egrave;re apr&egrave;s"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#9989; Personal brand &eacute;l&eacute;gant &middot; Titre clair et
+                    optimis&eacute; SEO &middot; Positionn&eacute; pour les bons clients.
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* UPWORK REVIEW */}
+            {/* 02 A PROPOS */}
+            <div className="lp-comp-block">
+              <div className="lp-comp-header">
+                <span className="lp-comp-num">02</span>
+                <div>
+                  <div className="lp-comp-title">Section &Agrave; propos</div>
+                  <div className="lp-comp-sub">
+                    Le pitch qui transforme un visiteur en prospect
+                  </div>
+                </div>
+              </div>
+              <div className="lp-comp-grid">
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-avant-tag">&#10007; Avant</div>
+                  <Image
+                    src="/images/lp/inna-apropos-avant.png"
+                    alt="&Agrave; propos avant"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#10060; Bilingue FR+EN non structur&eacute; &middot; Dilue le message &middot;
+                    Perd le lecteur &agrave; mi-texte.
+                  </div>
+                </div>
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-apres-tag">&#10003; Apr&egrave;s</div>
+                  <Image
+                    src="/images/lp/inna-apropos-apres.png"
+                    alt="&Agrave; propos apr&egrave;s"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#9989; 100% fran&ccedil;ais &middot; Voix authentique &middot; Orient&eacute;
+                    client &middot; Compr&eacute;hensible en 5 secondes.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 03 EXPERIENCE */}
+            <div className="lp-comp-block">
+              <div className="lp-comp-header">
+                <span className="lp-comp-num">03</span>
+                <div>
+                  <div className="lp-comp-title">Section Exp&eacute;rience</div>
+                  <div className="lp-comp-sub">
+                    La preuve de cr&eacute;dibilit&eacute; qui rassure
+                  </div>
+                </div>
+              </div>
+              <div className="lp-comp-grid">
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-avant-tag">&#10007; Avant</div>
+                  <Image
+                    src="/images/lp/inna-experience-avant.png"
+                    alt="Exp&eacute;rience avant"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#10060; Description tronqu&eacute;e &middot; Aucun r&eacute;sultat &middot; 15
+                    ans d&rsquo;expertise r&eacute;duits &agrave; une ligne vague.
+                  </div>
+                </div>
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-apres-tag">&#10003; Apr&egrave;s</div>
+                  <Image
+                    src="/images/lp/inna-experience-apres.png"
+                    alt="Exp&eacute;rience apr&egrave;s"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#9989; Impact chiffr&eacute; &middot; Conf&eacute;rence internationale &middot;
+                    Comp&eacute;tences cl&eacute;s &middot; Cr&eacute;dibilit&eacute;
+                    renforc&eacute;e.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 04 SELECTION */}
+            <div className="lp-comp-block">
+              <div className="lp-comp-header">
+                <span className="lp-comp-num">04</span>
+                <div>
+                  <div className="lp-comp-title">Section S&eacute;lection</div>
+                  <div className="lp-comp-sub">
+                    Le portfolio qui installe la confiance
+                  </div>
+                </div>
+              </div>
+              <div className="lp-comp-grid">
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-avant-tag">&#10007; Avant</div>
+                  <div className="lp-linkedin-featured">
+                    <div className="lp-featured-empty">
+                      <span>&#10133;</span>
+                      <small>Section vide &middot; Occasion manqu&eacute;e</small>
+                    </div>
+                  </div>
+                  <div className="lp-comp-why">
+                    &#10060; Section vide &middot; Aucune preuve de m&eacute;thode &middot; Le
+                    visiteur repart sans &ecirc;tre convaincu.
+                  </div>
+                </div>
+                <div className="lp-comp-card">
+                  <div className="lp-comp-tag lp-apres-tag">&#10003; Apr&egrave;s</div>
+                  <Image
+                    src="/images/lp/inna-selection-apres.png"
+                    alt="Section S&eacute;lection apr&egrave;s"
+                    width={680}
+                    height={400}
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <div className="lp-comp-why">
+                    &#9989; Vitrine de marque &middot; Logo professionnel &middot; Pitch clair
+                    &middot; Confiance et l&eacute;gitimit&eacute; instantan&eacute;es.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* RESULTS STRIP */}
+            <div className="lp-comp-results">
+              <div>
+                <div className="lp-comp-result-num">+35</div>
+                <div className="lp-comp-result-label">Apparitions dans les recherches</div>
+              </div>
+              <div>
+                <div className="lp-comp-result-num">224</div>
+                <div className="lp-comp-result-label">Impressions de posts</div>
+              </div>
+              <div>
+                <div className="lp-comp-result-num">22</div>
+                <div className="lp-comp-result-label">Vues de profil en 7 jours</div>
+              </div>
+              <div>
+                <div className="lp-comp-result-num">4</div>
+                <div className="lp-comp-result-label">Sections enti&egrave;rement r&eacute;&eacute;crites</div>
+              </div>
+            </div>
+          </div>
+
+          {/* UPWORK REVIEW */}
+          <div style={{ marginTop: 48 }}>
+            <div className="lp-case-header">
+              <span
+                style={{
+                  background: "#14a800",
+                  color: "#fff",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase" as const,
+                  padding: "4px 12px",
+                  borderRadius: 100,
+                }}
+              >
+                &#10003; Avis Upwork v&eacute;rifi&eacute;
+              </span>
+              <span className="lp-case-meta">
+                <strong>Lamiaa Bennis</strong> &middot; Consultante Logistique Senior &middot; Banque
+                Mondiale
+              </span>
+            </div>
             <div className="lp-upwork-review">
               <div className="lp-upwork-header">
-                <span className="lp-upwork-badge">&#10003; Avis Upwork v&eacute;rifi&eacute;</span>
                 <span className="lp-upwork-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span className="lp-upwork-meta">5.0 &middot; F&eacute;v 2026</span>
+                <span className="lp-upwork-meta">
+                  5.0 &middot; F&eacute;v 2026 &middot; Mission LinkedIn Profile Optimization
+                </span>
               </div>
               <blockquote>
                 &ldquo;Travailler avec Olaide a &eacute;t&eacute; simple et efficace. Il a
@@ -260,132 +457,18 @@ export default function OptimisationProfilLinkedinPage() {
                 en recommandant les meilleures pratiques. Je continuerai &agrave; travailler avec
                 lui.&rdquo;
               </blockquote>
-              <cite>
-                <strong>Lamiaa Bennis</strong> &middot; Consultante Logistique Senior &middot; Banque
-                Mondiale
-              </cite>
-            </div>
-          </div>
-
-          <hr className="lp-section-divider" />
-
-          {/* CASE 2: HOSTLYFT */}
-          <div className="lp-case">
-            <div className="lp-case-header">
-              <span className="lp-case-badge lp-case-badge--dark">
-                &Eacute;tude de cas 2
-              </span>
-              <span className="lp-case-meta">
-                <strong>Co-Fondatrice &middot; Hostlyft</strong> &middot; Gestionnaire de revenus
-                Airbnb &amp; Location saisonni&egrave;re
-              </span>
-            </div>
-            <div className="lp-ba-wrapper">
-              <div className="lp-ba-item">
-                <span className="lp-ba-label lp-ba-label--avant">&#10007; Avant</span>
-                <Image
-                  src="/images/lp/hostlyft-avant-apres.png"
-                  alt="Avant / Après Hostlyft LinkedIn"
-                  width={680}
-                  height={400}
-                  className="lp-ba-img"
-                />
-                <div className="lp-ba-annotation">
-                  10 vues de profil &middot; 0 impressions &middot; Titre g&eacute;n&eacute;rique
-                  sans positionnement
-                </div>
+              <div className="lp-upwork-author">
+                &mdash;{" "}
+                <strong>Lamiaa Bennis</strong> &middot; Consultante Senior Logistique &amp; Commerce
+                International
               </div>
-            </div>
-            <p className="lp-ba-caption">
-              <strong>
-                10 &rarr; 299 vues de profil &middot; 0 &rarr; 403 impressions de posts &middot; 79
-                apparitions dans les recherches
-              </strong>
-            </p>
-          </div>
-
-          <hr className="lp-section-divider" />
-
-          {/* CASE 3: LOGISTICS CONSULTANT */}
-          <div className="lp-case">
-            <div className="lp-case-header">
-              <span className="lp-case-badge lp-case-badge--grey">
-                &Eacute;tude de cas 3
-              </span>
-              <span className="lp-case-meta">
-                <strong>Consultante Senior</strong> &middot; Logistique &amp; Facilitation du
-                Commerce &middot; 20+ ans &middot; Banque Mondiale
-              </span>
-            </div>
-            <div className="lp-cs-comparison">
-              <div className="lp-cs-col lp-cs-col--avant">
-                <span className="lp-cs-col-tag">Avant</span>
-                <h4>Profil g&eacute;n&eacute;rique</h4>
-                <ul>
-                  <li>Titre = description de poste sans valeur</li>
-                  <li>R&eacute;sum&eacute; = liste de t&acirc;ches sans impact</li>
-                  <li>Banni&egrave;re = paysage, aucun message pro</li>
-                  <li>Exp&eacute;riences = responsabilit&eacute;s sans r&eacute;sultats</li>
-                  <li>Invisible dans les recherches LinkedIn</li>
-                </ul>
-              </div>
-              <div className="lp-cs-col lp-cs-col--apres">
-                <span className="lp-cs-col-tag">Apr&egrave;s</span>
-                <h4>Profil positionn&eacute;</h4>
-                <ul>
-                  <li>Titre = d&eacute;claration d&rsquo;autorit&eacute; sectorielle</li>
-                  <li>R&eacute;sum&eacute; = pitch segment&eacute; par audience cible</li>
-                  <li>Banni&egrave;re = visuelle de marque avec message fort</li>
-                  <li>Exp&eacute;riences = projets nomm&eacute;s + r&eacute;sultats chiffr&eacute;s</li>
-                  <li>Appara&icirc;t dans les recherches cibles</li>
-                </ul>
-              </div>
-            </div>
-            <div className="lp-cs-results-grid">
-              <div className="lp-cs-result">
-                <div className="lp-cs-result-num">+340%</div>
-                <div className="lp-cs-result-label">Vues de profil</div>
-              </div>
-              <div className="lp-cs-result">
-                <div className="lp-cs-result-num">7</div>
-                <div className="lp-cs-result-label">Demandes institutionnelles</div>
-              </div>
-              <div className="lp-cs-result">
-                <div className="lp-cs-result-num">3</div>
-                <div className="lp-cs-result-label">Invitations &agrave; des projets</div>
-              </div>
-              <div className="lp-cs-result">
-                <div className="lp-cs-result-num">2</div>
-                <div className="lp-cs-result-label">Invitations comme intervenante</div>
-              </div>
-            </div>
-          </div>
-
-          {/* AGGREGATE METRICS */}
-          <div className="lp-proof-metrics">
-            <div className="lp-metric-card">
-              <div className="val">
-                <em>+95%</em>
-              </div>
-              <div className="lbl">Impressions en hausse</div>
-            </div>
-            <div className="lp-metric-card">
-              <div className="val">
-                <em>+70%</em>
-              </div>
-              <div className="lbl">Vues profil</div>
-            </div>
-            <div className="lp-metric-card">
-              <div className="val">
-                10<em>+</em>
-              </div>
-              <div className="lbl">Leads inbound</div>
-            </div>
-            <div className="lp-metric-card">
-              <div className="val">
-                16<em>k</em>
-              </div>
-              <div className="lbl">Impressions organiques</div>
+              <Image
+                src="/images/lp/upwork-review-lamiaa.png"
+                alt="Avis Upwork Lamiaa Bennis"
+                width={500}
+                height={300}
+                className="lp-upwork-screenshot"
+              />
             </div>
           </div>
         </div>
@@ -444,6 +527,24 @@ export default function OptimisationProfilLinkedinPage() {
               </div>
             </div>
             <div className="lp-offer-cta">
+              <div
+                style={{
+                  background: "rgba(255,82,2,0.1)",
+                  border: "1px solid rgba(255,82,2,0.25)",
+                  borderRadius: 8,
+                  padding: "10px 16px",
+                  marginBottom: 20,
+                  textAlign: "center" as const,
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.7)",
+                }}
+              >
+                &#x26A1;{" "}
+                <strong style={{ color: "#FF6B1A" }}>
+                  2 places disponibles ce mois-ci
+                </strong>{" "}
+                &mdash; Juin 2026
+              </div>
               <a href={CALENDLY_URL} className="lp-btn-primary lp-btn-primary--lg">
                 R&eacute;server mon appel gratuit &mdash; 150&euro;{" "}
                 <span className="arrow">&rarr;</span>

@@ -347,7 +347,7 @@
 /* ─── PROOF ─── */
 .lp-proof { background: var(--lp-white); }
 
-/* Case study shared */
+/* Case study header */
 .lp-case-header {
   display: flex;
   align-items: center;
@@ -365,233 +365,68 @@
   flex-shrink: 0;
 }
 .lp-case-badge--orange { background: var(--lp-orange); }
-.lp-case-badge--dark { background: var(--lp-dark); }
-.lp-case-badge--grey { background: var(--lp-dark-3); }
 .lp-case-meta { font-size: 14px; color: var(--lp-text-muted); }
 .lp-case-meta strong { color: var(--lp-dark); }
 
-/* Before / After */
-.lp-ba-wrapper {
-  max-width: 680px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.lp-ba-item {
-  position: relative;
-  border-radius: var(--lp-radius);
-  overflow: hidden;
-  border: 1px solid var(--lp-grey-mid);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-}
-.lp-ba-img { width: 100%; display: block; height: auto; }
-.lp-ba-label {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 100px;
-  z-index: 2;
-}
-.lp-ba-label--avant { background: #ef4444; color: #fff; }
-.lp-ba-label--apres { background: #22c55e; color: #fff; }
-.lp-ba-annotation {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 6px;
-  max-width: 280px;
-  text-align: right;
-  line-height: 1.4;
-}
-.lp-ba-annotation strong { color: var(--lp-orange); }
-.lp-ba-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--lp-text-muted);
-}
-.lp-ba-divider::before,
-.lp-ba-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--lp-grey-mid);
-}
-.lp-ba-caption {
-  text-align: center;
-  font-size: 13px;
-  color: var(--lp-text-muted);
-  margin-top: 14px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.lp-ba-caption strong { color: var(--lp-orange); }
+/* Comparison Blocks */
+.lp-comp-block { margin-top: 36px; }
+.lp-comp-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.lp-comp-num { font-family: var(--lp-serif); font-size: 28px; font-weight: 800; color: var(--lp-grey-mid); line-height: 1; flex-shrink: 0; }
+.lp-comp-title { font-family: var(--lp-serif); font-size: 18px; font-weight: 700; color: var(--lp-dark); }
+.lp-comp-sub { font-size: 12px; color: var(--lp-text-muted); }
+.lp-comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lp-comp-card { border-radius: var(--lp-radius); overflow: hidden; border: 1px solid var(--lp-grey-mid); background: var(--lp-white); }
+.lp-comp-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 14px; }
+.lp-avant-tag { background: #fef2f2; color: #b91c1c; border-bottom: 1px solid #fecaca; display: block; }
+.lp-apres-tag { background: #f0fdf4; color: #166534; border-bottom: 1px solid #bbf7d0; display: block; }
+.lp-comp-why { font-size: 12px; line-height: 1.5; padding: 10px 14px; color: var(--lp-text-muted); border-top: 1px solid var(--lp-grey-mid); background: var(--lp-grey-light); }
+
+/* Featured Mock (Selection section) */
+.lp-linkedin-featured { padding: 14px; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+.lp-featured-empty { text-align: center; color: var(--lp-text-muted); }
+.lp-featured-empty span { font-size: 28px; display: block; margin-bottom: 6px; }
+.lp-featured-empty small { font-size: 12px; }
+
+/* Results Strip */
+.lp-comp-results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; background: var(--lp-dark); border-radius: var(--lp-radius); padding: 24px; }
+.lp-comp-result-num { font-family: var(--lp-serif); font-size: 28px; font-weight: 800; color: var(--lp-orange); line-height: 1; margin-bottom: 4px; }
+.lp-comp-result-label { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4; }
 
 /* Upwork Review */
 .lp-upwork-review {
   background: var(--lp-grey-light);
   border: 1px solid var(--lp-grey-mid);
+  border-left: 3px solid #14a800;
   border-radius: var(--lp-radius);
   padding: 24px 28px;
-  margin: 24px auto 0;
-  max-width: 680px;
 }
 .lp-upwork-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.lp-upwork-badge {
-  background: #14a800;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 .lp-upwork-stars { color: #ff9500; font-size: 18px; letter-spacing: 2px; }
-.lp-upwork-meta { font-size: 12px; color: var(--lp-text-muted); }
+.lp-upwork-meta { font-size: 13px; color: var(--lp-text-muted); }
 .lp-upwork-review blockquote {
   font-size: 15px;
   font-style: italic;
   color: var(--lp-text-body);
   line-height: 1.7;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
-.lp-upwork-review cite {
-  font-size: 12px;
-  color: var(--lp-text-muted);
-  font-style: normal;
-}
-.lp-upwork-review cite strong { color: var(--lp-dark); }
-
-/* Case Study Comparison */
-.lp-cs-comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.lp-cs-col { border-radius: var(--lp-radius); padding: 24px; }
-.lp-cs-col--avant { background: #fff5f5; border: 1px solid #fecaca; }
-.lp-cs-col--apres { background: #f0fdf4; border: 1px solid #bbf7d0; }
-.lp-cs-col-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-  display: inline-block;
-}
-.lp-cs-col--avant .lp-cs-col-tag { background: #fecaca; color: #b91c1c; }
-.lp-cs-col--apres .lp-cs-col-tag { background: #bbf7d0; color: #166534; }
-.lp-cs-col h4 {
-  font-family: var(--lp-serif);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--lp-dark);
-  margin-bottom: 12px;
-}
-.lp-cs-col ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.lp-cs-col ul li {
+.lp-upwork-author {
   font-size: 13px;
   color: var(--lp-text-muted);
-  line-height: 1.5;
-  padding-left: 16px;
-  position: relative;
 }
-.lp-cs-col--avant ul li::before { content: '✗'; position: absolute; left: 0; color: #ef4444; font-weight: 700; }
-.lp-cs-col--apres ul li::before { content: '✓'; position: absolute; left: 0; color: #22c55e; font-weight: 700; }
-
-/* Case Study Results Grid */
-.lp-cs-results-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.lp-cs-result {
-  background: var(--lp-dark);
-  border-radius: var(--lp-radius);
-  padding: 20px;
-  text-align: center;
-}
-.lp-cs-result-num {
-  font-family: var(--lp-serif);
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--lp-orange);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.lp-cs-result-label {
-  font-size: 11px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.4;
-}
-
-/* Section Divider */
-.lp-section-divider {
-  border: none;
-  border-top: 1px solid var(--lp-grey-mid);
-  margin: 40px 0;
-}
-
-/* Proof Metrics (aggregate) */
-.lp-proof-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 48px;
-  margin-bottom: 0;
-}
-.lp-metric-card {
-  background: var(--lp-white);
+.lp-upwork-author strong { color: var(--lp-dark); }
+.lp-upwork-screenshot {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin-top: 16px;
+  border-radius: 8px;
   border: 1px solid var(--lp-grey-mid);
-  border-radius: var(--lp-radius);
-  padding: 20px;
-  text-align: center;
-}
-.lp-metric-card .val {
-  font-family: var(--lp-serif);
-  font-size: 30px;
-  font-weight: 800;
-  color: var(--lp-dark);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.lp-metric-card .val em { color: var(--lp-orange); font-style: normal; }
-.lp-metric-card .lbl {
-  font-size: 12px;
-  color: var(--lp-text-muted);
-  font-weight: 500;
 }
 
 /* ─── OFFER ─── */
@@ -796,11 +631,11 @@ details.lp-faq-item[open] .lp-faq-question .icon { transform: rotate(45deg); }
   .lp-proof,
   .lp-offer-section,
   .lp-faq-section { padding: 60px 0; }
-  .lp-problem-grid,
-  .lp-cs-comparison { grid-template-columns: 1fr; }
-  .lp-metrics-grid,
-  .lp-proof-metrics,
-  .lp-cs-results-grid { grid-template-columns: repeat(2, 1fr); }
+  .lp-problem-grid { grid-template-columns: 1fr; }
+  .lp-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .lp-comp-grid { grid-template-columns: 1fr; }
+  .lp-comp-results { grid-template-columns: repeat(2, 1fr); }
+  .lp-comp-header { gap: 8px; }
   .lp-offer-features { grid-template-columns: 1fr; }
   .lp-offer-header { flex-direction: column; }
   .lp-offer-price { text-align: left; }
@@ -809,5 +644,4 @@ details.lp-faq-item[open] .lp-faq-question .icon { transform: rotate(45deg); }
   .lp-sticky-cta { display: flex; }
   .lp-footer { padding-bottom: 80px; }
   .lp-founder-inner { flex-direction: column; text-align: center; }
-  .lp-ba-annotation { display: none; }
 }
