@@ -96,7 +96,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
             window.addEventListener('message', function(e) {
               if (e.data.event && e.data.event === 'calendly.event_scheduled') {
                 gtag('event', 'conversion', {
-                  'send_to': 'AW-18163036620',
+                  'send_to': 'AW-18163036620/XntdCKXPh7ocEMzj59RD',
                   'value': 150.0,
                   'currency': 'EUR'
                 });
