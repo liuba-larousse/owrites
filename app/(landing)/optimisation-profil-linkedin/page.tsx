@@ -1,7 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import "./linkedin-profil.css";
 
 const CALENDLY_URL = "https://calendly.com/olaniyanolaide/discovery-call";
+
+declare global {
+  interface Window {
+    Calendly?: { initPopupWidget: (options: { url: string }) => void };
+  }
+}
+
+// Open Calendly as a popup overlay instead of navigating away, so the
+// `calendly.event_scheduled` postMessage fires and triggers the Google Ads conversion.
+function openCalendlyPopup(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  window.Calendly?.initPopupWidget({ url: CALENDLY_URL });
+}
 
 export default function OptimisationProfilLinkedinPage() {
   return (
@@ -25,7 +40,7 @@ export default function OptimisationProfilLinkedinPage() {
             &mdash; tout r&eacute;&eacute;crit dans votre voix par un expert B2B. En 7 jours.
           </p>
           <div className="lp-hero-cta-wrap">
-            <a href={CALENDLY_URL} className="lp-btn-primary">
+            <a href={CALENDLY_URL} onClick={openCalendlyPopup} className="lp-btn-primary">
               R&eacute;server mon appel gratuit <span className="arrow">&rarr;</span>
             </a>
             <div className="lp-hero-trust">
@@ -545,7 +560,7 @@ export default function OptimisationProfilLinkedinPage() {
                 </strong>{" "}
                 &mdash; Juin 2026
               </div>
-              <a href={CALENDLY_URL} className="lp-btn-primary lp-btn-primary--lg">
+              <a href={CALENDLY_URL} onClick={openCalendlyPopup} className="lp-btn-primary lp-btn-primary--lg">
                 R&eacute;server mon appel gratuit &mdash; 150&euro;{" "}
                 <span className="arrow">&rarr;</span>
               </a>
@@ -642,7 +657,7 @@ export default function OptimisationProfilLinkedinPage() {
           R&eacute;servez votre appel strat&eacute;gique gratuit de 30 minutes. On analyse votre
           profil actuel et on vous explique exactement ce qu&rsquo;on va changer.
         </p>
-        <a href={CALENDLY_URL} className="lp-btn-white">
+        <a href={CALENDLY_URL} onClick={openCalendlyPopup} className="lp-btn-white">
           R&eacute;server mon appel gratuit &rarr;
         </a>
       </section>
@@ -664,7 +679,7 @@ export default function OptimisationProfilLinkedinPage() {
             &middot; profil LinkedIn
           </span>
         </div>
-        <a href={CALENDLY_URL}>R&eacute;server mon appel &rarr;</a>
+        <a href={CALENDLY_URL} onClick={openCalendlyPopup}>R&eacute;server mon appel &rarr;</a>
       </div>
     </>
   );

@@ -59,6 +59,9 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Manrope:wght@400;500;600&display=swap"
         rel="stylesheet"
       />
+      {/* Calendly popup widget assets — required for Calendly.initPopupWidget() */}
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      <script src="https://assets.calendly.com/assets/external/widget.js" async />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
