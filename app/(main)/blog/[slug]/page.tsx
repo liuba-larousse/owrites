@@ -183,6 +183,27 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
             </div>
 
+            {/* Direct answer (AEO lead block) */}
+            {post.answer && (
+              <div
+                className="mb-8 rounded-2xl p-5 sm:p-6"
+                style={{
+                  backgroundColor: "var(--orange-glow)",
+                  borderLeft: "4px solid var(--orange)",
+                }}
+              >
+                <p
+                  className="text-xs font-bold uppercase tracking-wide mb-2"
+                  style={{ color: "var(--orange)" }}
+                >
+                  Réponse directe
+                </p>
+                <p className="text-base leading-relaxed" style={{ color: "var(--navy)" }}>
+                  {post.answer}
+                </p>
+              </div>
+            )}
+
             {/* Content */}
             <div
               className="prose prose-gray prose-lg max-w-none

@@ -2,6 +2,8 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  /** Direct, extractable answer to the question the title poses (AEO lead block). */
+  answer?: string;
   content: string;
   category: string;
   tags: string[];
@@ -85,6 +87,8 @@ export const blogPosts: BlogPost[] = [
     title: "5 piliers d'une stratégie de contenu B2B efficace en 2025",
     excerpt:
       "Découvrez comment les entreprises B2B leaders génèrent des leads qualifiés grâce à une stratégie de contenu structurée et mesurable.",
+    answer:
+      "Une stratégie de contenu B2B efficace en 2025 repose sur cinq piliers : connaître précisément votre ICP, équilibrer chaque contenu entre SEO, éducation et conversion, publier avec régularité, traiter le contenu comme un actif durable plutôt qu'une dépense, et investir autant dans la distribution que dans la production.",
     category: "Stratégie",
     tags: ["stratégie", "B2B", "leads", "contenu"],
     author: {
@@ -158,6 +162,8 @@ Chez Owrites, nous avons accompagné des centaines d'entreprises francophones da
     title: "Comment l'IA transforme la rédaction de contenu d'entreprise",
     excerpt:
       "L'IA ne remplace pas les rédacteurs humains — elle les amplifie. Voici comment combiner expertise humaine et automatisation intelligente.",
+    answer:
+      "L'IA ne remplace pas les rédacteurs, elle les amplifie. Le modèle le plus efficace est hybride : l'IA gère le volume, la cohérence de format et l'optimisation SEO, tandis que l'humain apporte l'insight original, le storytelling et le jugement éditorial. Résultat : un contenu produit environ 3× plus vite et 40 % moins cher, à qualité éditoriale égale.",
     category: "Intelligence Artificielle",
     tags: ["IA", "automatisation", "rédaction", "agent AI"],
     author: {
@@ -213,6 +219,8 @@ L'agent IA Owrites se connecte à votre CMS via API REST standard. Il peut :
     title: "SEO B2B en Belgique et Suisse : les spécificités à connaître",
     excerpt:
       "Les marchés belge et suisse ont leurs propres codes. Adaptez votre stratégie SEO pour capter le trafic qualifié francophone.",
+    answer:
+      "Le SEO B2B en Belgique et en Suisse romande se joue sur des volumes de recherche plus faibles qu'en France, mais des leads bien plus qualifiés. La stratégie gagnante : viser les positions 1 à 3 sur des mots-clés locaux à forte intention d'achat, intégrer des géo-modifiants (Bruxelles, Wallonie, Genève, Lausanne) et adapter le lexique régional (nonante, fiduciaire).",
     category: "SEO",
     tags: ["SEO", "Belgique", "Suisse", "francophone", "local"],
     author: {
@@ -267,6 +275,8 @@ Le SEO dans la francophonie belge et suisse est une opportunité sous-exploitée
     title: "Copywriting email B2B : les techniques qui font vraiment convertir",
     excerpt:
       "Taux d'ouverture de 40%, taux de clic de 12% — voici les formules d'email B2B qui surpassent la moyenne du secteur.",
+    answer:
+      "Un email B2B qui convertit tient en moins de 200 mots, avec un objet de 6 mots maximum et un seul appel à l'action. La structure gagnante enchaîne accroche, corps, preuve chiffrée et CTA unique. Dans nos tests sur 500 campagnes francophones, les meilleurs moments d'envoi sont le mardi à 10h et le jeudi à 14h.",
     category: "Email Marketing",
     tags: ["email", "copywriting", "automation", "conversion"],
     author: {

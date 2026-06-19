@@ -296,7 +296,7 @@ export default function BlogLeadGenPage() {
           <div className="author-info">
             <h4>Olaide Olaniyan</h4>
             <div className="role">Fondateur — Owrites</div>
-            <p>Ghostwriter LinkedIn et consultante lead generation B2B. Olaide aide les fondateurs et consultants à transformer LinkedIn en canal d&apos;acquisition — avec du contenu stratégique, un positionnement clair et zéro automatisation.</p>
+            <p>Ghostwriter LinkedIn et consultant lead generation B2B. Olaide aide les fondateurs et consultants à transformer LinkedIn en canal d&apos;acquisition — avec du contenu stratégique, un positionnement clair et zéro automatisation.</p>
           </div>
         </div>
       </article>
