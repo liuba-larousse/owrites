@@ -140,7 +140,7 @@ export default function Manifesto() {
               paddingLeft: 20,
             }}
           >
-            — Olaide Olaniyan, Fondatrice d&apos;Owrites
+            — Olaide Olaniyan, Fondateur d&apos;Owrites
           </div>
         </div>
 

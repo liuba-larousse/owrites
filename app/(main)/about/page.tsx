@@ -38,7 +38,7 @@ const values = [
 const team = [
   {
     name: "Olaide Olaniyan",
-    role: "Fondatrice & CEO",
+    role: "Fondateur & CEO",
     bio: "Spécialiste du personal branding B2B depuis 8 ans. A fondé Owrites pour aider les fondateurs et consultants francophones à bâtir une autorité réelle sur LinkedIn.",
     initials: "OO",
   },

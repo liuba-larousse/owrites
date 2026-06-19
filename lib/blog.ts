@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["ghostwriter", "tarifs", "LinkedIn", "lead generation", "B2B"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -49,7 +49,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["lead generation", "LinkedIn", "social selling", "B2B", "prospection"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["ghostwriter", "voix", "authenticité", "personal branding", "LinkedIn"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["stratégie", "B2B", "leads", "contenu"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -162,7 +162,7 @@ Chez Owrites, nous avons accompagné des centaines d'entreprises francophones da
     tags: ["IA", "automatisation", "rédaction", "agent AI"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -217,7 +217,7 @@ L'agent IA Owrites se connecte à votre CMS via API REST standard. Il peut :
     tags: ["SEO", "Belgique", "Suisse", "francophone", "local"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },
@@ -271,7 +271,7 @@ Le SEO dans la francophonie belge et suisse est une opportunité sous-exploitée
     tags: ["email", "copywriting", "automation", "conversion"],
     author: {
       name: "Olaide Olaniyan",
-      role: "Fondatrice — Owrites",
+      role: "Fondateur — Owrites",
       initials: "OO",
       color: "bg-brand-500",
     },

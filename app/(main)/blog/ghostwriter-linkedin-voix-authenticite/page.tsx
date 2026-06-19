@@ -89,7 +89,7 @@ export default function BlogVoixAuthenticitePage() {
             <div className="article-avatar">OO</div>
             <div className="article-meta-text">
               <strong>Olaide Olaniyan</strong><br />
-              Fondatrice Owrites <span>·</span> 10 janvier 2026 <span>·</span> 7 min de lecture
+              Fondateur Owrites <span>·</span> 10 janvier 2026 <span>·</span> 7 min de lecture
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ export default function BlogVoixAuthenticitePage() {
           <div className="author-avatar-lg">OO</div>
           <div className="author-info">
             <h4>Olaide Olaniyan</h4>
-            <div className="role">Fondatrice — Owrites</div>
+            <div className="role">Fondateur — Owrites</div>
             <p>Ghostwriter LinkedIn et consultant lead generation B2B. Olaide aide les fondateurs et consultants à transformer LinkedIn en canal d&apos;acquisition — avec du contenu stratégique, un positionnement clair et zéro automatisation.</p>
           </div>
         </div>
