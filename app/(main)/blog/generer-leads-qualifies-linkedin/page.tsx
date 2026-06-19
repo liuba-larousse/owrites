@@ -79,7 +79,7 @@ export default function BlogLeadGenPage() {
             <div className="article-avatar">OO</div>
             <div className="article-meta-text">
               <strong>Olaide Olaniyan</strong><br />
-              Fondateur Owrites <span>·</span> 15 février 2026 <span>·</span> 10 min de lecture
+              Fondatrice Owrites <span>·</span> 15 février 2026 <span>·</span> 10 min de lecture
             </div>
           </div>
         </div>
@@ -87,10 +87,12 @@ export default function BlogLeadGenPage() {
 
       {/* FEATURED IMAGE */}
       <div className="article-featured fade-up s1">
-        <div className="article-featured-img">
-          <span className="ph-icon">📸</span>
-          <span className="ph-label">IMAGE: Illustration lead generation LinkedIn — entonnoir de conversion avec profil LinkedIn en haut, leads qualifiés en bas, icônes engagement/contenu, palette orange/noir. 16:9.</span>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/blog/generer-leads-qualifies-linkedin.svg"
+          alt="Générer des leads qualifiés sur LinkedIn — illustration"
+          style={{ width: "100%", borderRadius: 16, display: "block" }}
+        />
       </div>
 
       {/* ═══ ARTICLE BODY ═══ */}

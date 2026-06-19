@@ -118,11 +118,18 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {/* Cover */}
-      <div
-        className="h-64 lg:h-80 flex items-end"
-        style={{ background: "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)" }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+      <div className="relative h-64 lg:h-80 flex items-end overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={post.image}
+          alt={post.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3))" }}
+        />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-white/60 text-sm hover:text-white transition-colors mb-6"
@@ -245,16 +252,14 @@ export default async function BlogPostPage({ params }: Props) {
                   href={`/blog/${rp.slug}`}
                   className="group flex flex-col rounded-xl border border-gray-200 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
                 >
-                  <div
-                    className="h-28 flex items-center justify-center relative"
-                    style={{ background: "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)" }}
-                  >
-                    <span
-                      className="text-5xl font-serif font-bold opacity-20 text-white"
-                      style={{ fontFamily: "var(--font-serif)" }}
-                    >
-                      {rp.category.charAt(0)}
-                    </span>
+                  <div className="h-28 relative overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={rp.image}
+                      alt={rp.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="p-4 bg-white flex-1">
                     <span

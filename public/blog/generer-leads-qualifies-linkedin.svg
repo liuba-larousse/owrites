@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : génération de leads LinkedIn">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f1f" />
+      <stop offset="1" stop-color="#0e0e0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="250" cy="480" r="220" fill="#FF5202" opacity="0.10" />
+  <!-- funnel -->
+  <path d="M540 170 L1020 170 L860 360 L860 470 L700 520 L700 360 Z" fill="#FF5202" opacity="0.2" stroke="#FF5202" stroke-width="5" stroke-linejoin="round" />
+  <!-- prospects entering -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="600" cy="210" r="13" />
+    <circle cx="700" cy="210" r="13" />
+    <circle cx="800" cy="210" r="13" />
+    <circle cx="900" cy="210" r="13" />
+    <circle cx="650" cy="250" r="10" opacity="0.6" />
+    <circle cx="760" cy="250" r="10" opacity="0.6" />
+    <circle cx="870" cy="250" r="10" opacity="0.6" />
+  </g>
+  <!-- qualified lead out -->
+  <path d="M780 545 l16 33 l36 5 l-26 25 l6 36 l-32 -17 l-32 17 l6 -36 l-26 -25 l36 -5 z" fill="#FF5202" />
+</svg>

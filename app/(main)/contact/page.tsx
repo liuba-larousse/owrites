@@ -102,17 +102,16 @@ export default function ContactPage() {
                   Appel de 30 min · 100% gratuit · Sans engagement
                 </p>
                 <a
-                  href="#"
+                  href="https://calendly.com/olaniyanolaide/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary w-full justify-center text-sm"
                 >
                   Choisir un créneau →
                 </a>
               </div>
 
-              <div className="mt-6 space-y-3">
-                <a href="mailto:bonjour@owrites.co" className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange transition-colors">
-                  <span>✉</span> bonjour@owrites.co
-                </a>
+              <div className="mt-6">
                 <p className="text-xs text-gray-400">Réponse garantie en moins de 24h ouvrées</p>
               </div>
             </div>

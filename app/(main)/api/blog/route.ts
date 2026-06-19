@@ -57,6 +57,7 @@ export async function POST(request: Request) {
       publishedAt: body.publishedAt ?? new Date().toISOString().split("T")[0],
       readTime: body.readTime ?? "5 min",
       coverColor: body.coverColor ?? "from-brand-600 to-brand-800",
+      image: body.image ?? "/blog/default.svg",
       featured: body.featured ?? false,
       createdByAgent: true,
       createdAt: new Date().toISOString(),

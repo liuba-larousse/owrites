@@ -91,6 +91,24 @@ export default function Footer() {
             fontSize: 12.5,
           }}
         >
+          <a
+            href="https://www.linkedin.com/in/olaide-olaniyan-651596176/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              color: "var(--orange)",
+              textDecoration: "none",
+              fontSize: 14,
+              fontWeight: 600,
+              marginBottom: 18,
+            }}
+          >
+            Let&apos;s Connect on LinkedIn →
+          </a>
+          <br />
           © 2026 Owrites — Ghostwriter LinkedIn B2B France. Personal branding,
           génération de leads et stratégie de contenu pour fondateurs &amp;
           consultants.

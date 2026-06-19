@@ -14,6 +14,7 @@ export interface BlogPost {
   publishedAt: string;
   readTime: string;
   coverColor: string;
+  image: string;
   featured?: boolean;
 }
 
@@ -33,6 +34,7 @@ export const blogPosts: BlogPost[] = [
       color: "bg-brand-500",
     },
     publishedAt: "2026-01-01",
+    image: "/blog/cout-ghostwriter-linkedin-2026.svg",
     readTime: "8 min",
     coverColor: "from-brand-600 to-brand-800",
     featured: true,
@@ -52,6 +54,7 @@ export const blogPosts: BlogPost[] = [
       color: "bg-brand-500",
     },
     publishedAt: "2026-02-15",
+    image: "/blog/generer-leads-qualifies-linkedin.svg",
     readTime: "10 min",
     coverColor: "from-brand-600 to-brand-800",
     featured: false,
@@ -71,6 +74,7 @@ export const blogPosts: BlogPost[] = [
       color: "bg-brand-500",
     },
     publishedAt: "2026-01-10",
+    image: "/blog/ghostwriter-linkedin-voix-authenticite.svg",
     readTime: "7 min",
     coverColor: "from-brand-600 to-brand-800",
     featured: false,
@@ -90,6 +94,7 @@ export const blogPosts: BlogPost[] = [
       color: "bg-brand-500",
     },
     publishedAt: "2025-03-12",
+    image: "/blog/strategie-contenu-b2b-2025.svg",
     readTime: "8 min",
     coverColor: "from-brand-600 to-brand-800",
     featured: false,
@@ -162,6 +167,7 @@ Chez Owrites, nous avons accompagné des centaines d'entreprises francophones da
       color: "bg-brand-500",
     },
     publishedAt: "2025-03-05",
+    image: "/blog/ia-redaction-contenu-entreprise.svg",
     readTime: "6 min",
     coverColor: "from-purple-600 to-purple-900",
     featured: false,
@@ -216,6 +222,7 @@ L'agent IA Owrites se connecte à votre CMS via API REST standard. Il peut :
       color: "bg-brand-500",
     },
     publishedAt: "2025-02-28",
+    image: "/blog/seo-b2b-belgique-suisse.svg",
     readTime: "7 min",
     coverColor: "from-emerald-600 to-teal-800",
     featured: false,
@@ -269,6 +276,7 @@ Le SEO dans la francophonie belge et suisse est une opportunité sous-exploitée
       color: "bg-brand-500",
     },
     publishedAt: "2025-02-20",
+    image: "/blog/copywriting-email-b2b-convertir.svg",
     readTime: "5 min",
     coverColor: "from-rose-600 to-pink-800",
     featured: false,

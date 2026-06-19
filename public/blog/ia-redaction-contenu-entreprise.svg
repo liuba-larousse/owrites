@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : IA et rédaction de contenu">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f1f" />
+      <stop offset="1" stop-color="#0e0e0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1000" cy="480" r="230" fill="#FF5202" opacity="0.10" />
+  <g stroke="#ffffff" stroke-width="2.5" opacity="0.35">
+    <line x1="660" y1="200" x2="840" y2="150" />
+    <line x1="840" y1="150" x2="1000" y2="250" />
+    <line x1="660" y1="200" x2="780" y2="310" />
+    <line x1="780" y1="310" x2="1000" y2="250" />
+    <line x1="780" y1="310" x2="900" y2="410" />
+    <line x1="660" y1="200" x2="620" y2="370" />
+    <line x1="620" y1="370" x2="780" y2="310" />
+  </g>
+  <g>
+    <circle cx="660" cy="200" r="20" fill="#FF5202" />
+    <circle cx="840" cy="150" r="14" fill="#ffffff" opacity="0.85" />
+    <circle cx="1000" cy="250" r="22" fill="#FF5202" />
+    <circle cx="780" cy="310" r="16" fill="#ffffff" opacity="0.9" />
+    <circle cx="900" cy="410" r="13" fill="#FF5202" />
+    <circle cx="620" cy="370" r="18" fill="#ffffff" opacity="0.8" />
+  </g>
+</svg>

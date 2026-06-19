@@ -89,7 +89,7 @@ export default function BlogVoixAuthenticitePage() {
             <div className="article-avatar">OO</div>
             <div className="article-meta-text">
               <strong>Olaide Olaniyan</strong><br />
-              Fondateur Owrites <span>·</span> 10 janvier 2026 <span>·</span> 7 min de lecture
+              Fondatrice Owrites <span>·</span> 10 janvier 2026 <span>·</span> 7 min de lecture
             </div>
           </div>
         </div>
@@ -97,10 +97,12 @@ export default function BlogVoixAuthenticitePage() {
 
       {/* FEATURED IMAGE */}
       <div className="article-featured fade-up s1">
-        <div className="article-featured-img">
-          <span className="ph-icon">📸</span>
-          <span className="ph-label">IMAGE: Concept visuel &quot;votre voix, amplifiée&quot; — fondateur parlant avec des ondes sonores qui se transforment en texte LinkedIn. Split composition, palette orange/noir. Style éditorial, 16:9.</span>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/blog/ghostwriter-linkedin-voix-authenticite.svg"
+          alt="Votre voix, amplifiée par le ghostwriting LinkedIn — illustration"
+          style={{ width: "100%", borderRadius: 16, display: "block" }}
+        />
       </div>
 
       {/* ═══ ARTICLE BODY ═══ */}
@@ -281,7 +283,7 @@ export default function BlogVoixAuthenticitePage() {
           <div className="author-avatar-lg">OO</div>
           <div className="author-info">
             <h4>Olaide Olaniyan</h4>
-            <div className="role">Fondateur — Owrites</div>
+            <div className="role">Fondatrice — Owrites</div>
             <p>Ghostwriter LinkedIn et consultant lead generation B2B. Olaide aide les fondateurs et consultants à transformer LinkedIn en canal d&apos;acquisition — avec du contenu stratégique, un positionnement clair et zéro automatisation.</p>
           </div>
         </div>

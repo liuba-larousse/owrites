@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : stratégie de contenu B2B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f1f" />
+      <stop offset="1" stop-color="#0e0e0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="220" cy="150" r="220" fill="#FF5202" opacity="0.10" />
+  <!-- 5 ascending pillars -->
+  <rect x="600" y="400" width="72" height="120" rx="12" fill="#FF5202" opacity="0.35" />
+  <rect x="700" y="340" width="72" height="180" rx="12" fill="#FF5202" opacity="0.5" />
+  <rect x="800" y="268" width="72" height="252" rx="12" fill="#FF5202" opacity="0.68" />
+  <rect x="900" y="196" width="72" height="324" rx="12" fill="#FF5202" opacity="0.84" />
+  <rect x="1000" y="120" width="72" height="400" rx="12" fill="#FF5202" />
+  <polyline points="636,400 736,340 836,268 936,196 1036,120" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+  <g fill="#ffffff">
+    <circle cx="636" cy="400" r="9" />
+    <circle cx="836" cy="268" r="9" />
+    <circle cx="1036" cy="120" r="11" />
+  </g>
+</svg>

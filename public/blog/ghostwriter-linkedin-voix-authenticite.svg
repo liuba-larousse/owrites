@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : voix et authenticité du ghostwriting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f1f" />
+      <stop offset="1" stop-color="#0e0e0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="950" cy="470" r="230" fill="#FF5202" opacity="0.10" />
+  <!-- big quotation mark -->
+  <text x="430" y="370" font-family="Georgia, serif" font-size="320" font-weight="bold" fill="#FF5202" text-anchor="middle">&#8220;</text>
+  <!-- voice waveform -->
+  <g stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity="0.9">
+    <line x1="690" y1="315" x2="690" y2="315" />
+    <line x1="690" y1="280" x2="690" y2="350" />
+    <line x1="730" y1="240" x2="730" y2="390" />
+    <line x1="770" y1="200" x2="770" y2="430" />
+    <line x1="810" y1="270" x2="810" y2="360" />
+    <line x1="850" y1="225" x2="850" y2="405" />
+    <line x1="890" y1="290" x2="890" y2="340" />
+    <line x1="930" y1="250" x2="930" y2="380" />
+    <line x1="970" y1="210" x2="970" y2="420" />
+  </g>
+</svg>

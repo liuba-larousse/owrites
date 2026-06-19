@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : copywriting email B2B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f1f1f" />
+      <stop offset="1" stop-color="#0e0e0e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1010" cy="150" r="210" fill="#FF5202" opacity="0.10" />
+  <g stroke="#ffffff" stroke-width="6" fill="none" opacity="0.92" stroke-linejoin="round">
+    <rect x="470" y="220" width="360" height="240" rx="20" fill="#ffffff" fill-opacity="0.05" />
+    <polyline points="470,245 650,360 830,245" stroke-linecap="round" />
+  </g>
+  <g opacity="0.95">
+    <polyline points="860,440 945,335 1010,260" fill="none" stroke="#FF5202" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="965,258 1010,260 1004,305" fill="none" stroke="#FF5202" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

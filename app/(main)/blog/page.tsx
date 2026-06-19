@@ -53,10 +53,18 @@ export default async function BlogPage({
             href={`/blog/${featured.slug}`}
             className="group block rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all mb-14"
           >
-            <div
-              className={`h-56 lg:h-64 bg-gradient-to-br ${featured.coverColor} flex items-end p-8 relative overflow-hidden`}
-              style={{ background: `linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)` }}
-            >
+            <div className="h-56 lg:h-64 flex items-end p-8 relative overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={featured.image}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.15))" }}
+              />
               <div className="relative z-10">
                 <span
                   className="inline-block rounded-full px-3 py-1 text-xs font-semibold mb-3 text-white"
@@ -132,16 +140,14 @@ export default async function BlogPage({
               className="group flex flex-col rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all"
             >
               {/* Cover */}
-              <div
-                className="h-44 flex items-center justify-center relative overflow-hidden"
-                style={{ background: "linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)" }}
-              >
-                <span
-                  className="text-7xl font-serif font-bold opacity-20 text-white"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {post.category.charAt(0)}
-                </span>
+              <div className="h-44 relative overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <span
                   className="absolute bottom-3 left-4 text-xs font-semibold px-2.5 py-1 rounded-full text-white"
                   style={{ backgroundColor: "var(--orange)" }}

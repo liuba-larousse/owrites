@@ -79,7 +79,7 @@ export default function BlogArticlePage() {
             <div className="article-avatar">OO</div>
             <div className="article-meta-text">
               <strong>Olaide Olaniyan</strong><br />
-              Fondateur Owrites <span>·</span> 1 janvier 2026 <span>·</span> 8 min de lecture
+              Fondatrice Owrites <span>·</span> 1 janvier 2026 <span>·</span> 8 min de lecture
             </div>
           </div>
         </div>
@@ -87,10 +87,12 @@ export default function BlogArticlePage() {
 
       {/* FEATURED IMAGE */}
       <div className="article-featured fade-up s1">
-        <div className="article-featured-img">
-          <span className="ph-icon">📸</span>
-          <span className="ph-label">IMAGE: Illustration conceptuelle des tarifs ghostwriting LinkedIn — graphique de prix avec 3 niveaux (bas/moyen/premium), icônes LinkedIn, palette orange/noir. Style éditorial, clean. 16:9.</span>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/blog/cout-ghostwriter-linkedin-2026.svg"
+          alt="Tarifs du ghostwriting LinkedIn en 2026 — illustration"
+          style={{ width: "100%", borderRadius: 16, display: "block" }}
+        />
       </div>
 
       {/* ═══ ARTICLE BODY ═══ */}

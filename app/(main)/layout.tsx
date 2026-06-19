@@ -39,7 +39,7 @@ export default function MainLayout({
               "Formation Social Selling",
             ],
             priceRange: "€€",
-            sameAs: ["https://www.linkedin.com/company/owrites"],
+            sameAs: ["https://www.linkedin.com/in/olaide-olaniyan-651596176/"],
           }),
         }}
       />
