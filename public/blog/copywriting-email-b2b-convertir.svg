@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : copywriting email B2B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ec2552" />
+      <stop offset="1" stop-color="#8f0f4d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="120" r="200" fill="#ffffff" opacity="0.05" />
+  <circle cx="160" cy="520" r="150" fill="#ffffff" opacity="0.04" />
+  <!-- envelope -->
+  <g stroke="#ffffff" stroke-width="6" fill="none" opacity="0.95" stroke-linejoin="round">
+    <rect x="470" y="225" width="360" height="240" rx="20" fill="#ffffff" fill-opacity="0.08" />
+    <polyline points="470,250 650,365 830,250" stroke-linecap="round" />
+  </g>
+  <!-- engagement arrow rising out of the inbox -->
+  <g opacity="0.95">
+    <polyline points="860,440 945,335 1010,260" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="965,258 1010,260 1004,305" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <!-- click cursor -->
+  <g fill="#ffffff" opacity="0.95">
+    <path d="M735 470 l0 80 l20 -22 l16 34 l16 -8 l-16 -34 l30 -2 z" />
+  </g>
+</svg>

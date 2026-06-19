@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
+import { track } from "@vercel/analytics";
+import { BOOKING_URL } from "@/lib/config";
 
 export default function CTA() {
   return (
@@ -36,13 +40,16 @@ export default function CTA() {
                 Démarrer gratuitement
                 <ArrowRight size={18} />
               </Link>
-              <Link
-                href="/contact#demo"
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("booking_click", { location: "home_cta" })}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-brand-400/50 bg-white/10 backdrop-blur-sm px-7 py-3.5 text-base font-semibold text-white hover:bg-white/20 transition-all"
               >
                 <Calendar size={18} />
                 Réserver une démo
-              </Link>
+              </a>
             </div>
 
             <p className="text-brand-200/70 text-xs mt-6">

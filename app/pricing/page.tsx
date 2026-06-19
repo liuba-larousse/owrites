@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, X } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Tarifs — Plans et offres",
   description:
     "Découvrez les tarifs Owrites : plans Starter, Growth et Enterprise pour votre stratégie de contenu B2B en francophonie.",
+  alternates: { canonical: "/pricing" },
 };
 
 const plans = [
@@ -94,9 +96,20 @@ const faq = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <div className="pt-16">
+      <JsonLd data={faqSchema} />
       {/* Hero */}
       <section className="section-py bg-gradient-to-b from-gray-50 to-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">

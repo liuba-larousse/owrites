@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Calendar, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin, Calendar } from "lucide-react";
+import { track } from "@vercel/analytics";
+import { BOOKING_URL } from "@/lib/config";
 
 const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "bonjour@owrites.com",
-    href: "mailto:bonjour@owrites.com",
-  },
   {
     icon: Phone,
     label: "Téléphone",
@@ -26,12 +22,11 @@ const contactInfo = [
     icon: Calendar,
     label: "Réserver un appel",
     value: "Calendly (30 min)",
-    href: "#demo",
+    href: BOOKING_URL,
   },
 ];
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -41,10 +36,18 @@ export default function ContactPage() {
     message: "",
   });
 
+  // The form is a frictionless pre-booking step: on submit we send the visitor
+  // straight to Calendly with their name and email pre-filled, so they land on
+  // the slot picker ready to book.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production: send to API or form service
-    setSubmitted(true);
+    track("contact_form_submit", { budget: form.budget || "non précisé" });
+
+    const params = new URLSearchParams();
+    if (form.name) params.set("name", form.name);
+    if (form.email) params.set("email", form.email);
+    const sep = BOOKING_URL.includes("?") ? "&" : "?";
+    window.location.href = `${BOOKING_URL}${sep}${params.toString()}`;
   };
 
   return (
@@ -115,7 +118,10 @@ export default function ContactPage() {
                   stratégie de contenu B2B.
                 </p>
                 <a
-                  href="#"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("booking_click", { location: "contact_demo" })}
                   className="inline-flex items-center justify-center w-full rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-50 transition-colors"
                 >
                   Choisir un créneau →
@@ -125,25 +131,19 @@ export default function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              {submitted ? (
-                <div className="rounded-2xl border border-green-200 bg-green-50 p-10 text-center">
-                  <CheckCircle2 size={48} className="text-green-500 mx-auto mb-4" />
-                  <h2 className="text-xl font-display font-semibold text-gray-900 mb-2">
-                    Message envoyé !
-                  </h2>
-                  <p className="text-gray-500 text-sm">
-                    Merci pour votre message. Notre équipe vous répondra dans les
-                    24 heures ouvrées.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit}
-                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm space-y-5"
-                >
-                  <h2 className="text-lg font-display font-semibold text-gray-900 mb-2">
-                    Envoyez-nous un message
-                  </h2>
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm space-y-5"
+              >
+                  <div className="mb-2">
+                    <h2 className="text-lg font-display font-semibold text-gray-900">
+                      Réservez votre appel stratégique
+                    </h2>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Renseignez vos coordonnées : vous choisirez ensuite votre
+                      créneau dans notre agenda Calendly.
+                    </p>
+                  </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -221,10 +221,9 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1.5">
-                      Décrivez votre projet *
+                      Un mot sur votre projet (facultatif)
                     </label>
                     <textarea
-                      required
                       rows={4}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -235,20 +234,20 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700 transition-all shadow-sm"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700 transition-all shadow-sm"
                   >
-                    Envoyer ma demande
+                    Réserver mon appel →
                   </button>
 
                   <p className="text-xs text-gray-400 text-center">
-                    En envoyant ce formulaire, vous acceptez notre{" "}
+                    Vous serez redirigé vers notre agenda pour choisir un créneau.
+                    En continuant, vous acceptez notre{" "}
                     <a href="/legal/privacy" className="underline hover:text-brand-600">
                       politique de confidentialité
                     </a>
                     .
                   </p>
                 </form>
-              )}
             </div>
           </div>
         </div>

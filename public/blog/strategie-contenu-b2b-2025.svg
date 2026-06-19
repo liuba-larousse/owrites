@@ -1,0 +1,28 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : stratégie de contenu B2B">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b46e8" />
+      <stop offset="1" stop-color="#2c1c8c" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="180" cy="120" r="220" fill="#ffffff" opacity="0.05" />
+  <circle cx="120" cy="540" r="140" fill="#ffffff" opacity="0.04" />
+  <!-- ascending pillars: the "5 piliers" -->
+  <g>
+    <rect x="620" y="400" width="72" height="120" rx="12" fill="#ffffff" opacity="0.32" />
+    <rect x="720" y="340" width="72" height="180" rx="12" fill="#ffffff" opacity="0.45" />
+    <rect x="820" y="268" width="72" height="252" rx="12" fill="#ffffff" opacity="0.6" />
+    <rect x="920" y="196" width="72" height="324" rx="12" fill="#ffffff" opacity="0.78" />
+    <rect x="1020" y="120" width="72" height="400" rx="12" fill="#ffffff" opacity="0.95" />
+  </g>
+  <!-- trend line through the pillar tops -->
+  <polyline points="656,400 756,340 856,268 956,196 1056,120" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+  <g fill="#ffd166">
+    <circle cx="656" cy="400" r="9" />
+    <circle cx="756" cy="340" r="9" />
+    <circle cx="856" cy="268" r="9" />
+    <circle cx="956" cy="196" r="9" />
+    <circle cx="1056" cy="120" r="11" />
+  </g>
+</svg>

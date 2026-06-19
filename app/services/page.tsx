@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/config";
 import {
   PenTool,
   FileText,
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "Services de contenu B2B",
   description:
     "Découvrez tous les services de création de contenu Owrites : articles de blog, pages web, email marketing, SEO, LinkedIn et agent IA éditorial.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [
@@ -208,12 +210,14 @@ export default function ServicesPage() {
             Discutons de vos objectifs. En 30 minutes, nous définissons ensemble
             la stratégie de contenu adaptée à votre entreprise.
           </p>
-          <Link
-            href="/contact#demo"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-7 py-3.5 text-sm font-semibold text-white hover:bg-brand-700 transition-all shadow-lg shadow-brand-600/25"
           >
             Réserver un appel stratégique gratuit <ArrowRight size={16} />
-          </Link>
+          </a>
         </div>
       </section>
     </div>

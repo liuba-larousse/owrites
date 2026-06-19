@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Target, Heart, Zap } from "lucide-react";
+import { LINKEDIN_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "À propos — Notre mission",
   description:
     "Découvrez l'histoire d'Owrites, notre mission, nos valeurs et l'équipe derrière la plateforme de contenu B2B francophone.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -210,12 +212,14 @@ export default function AboutPage() {
             >
               Démarrer un projet <ArrowRight size={16} />
             </Link>
-            <Link
-              href="mailto:bonjour@owrites.com"
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 px-6 py-3 text-sm font-semibold text-gray-700 hover:border-brand-300 hover:text-brand-600 transition-all"
             >
-              Rejoindre l&apos;équipe
-            </Link>
+              Nous suivre sur LinkedIn
+            </a>
           </div>
         </div>
       </section>

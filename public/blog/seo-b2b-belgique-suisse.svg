@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration : SEO B2B en Belgique et Suisse">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0aa06a" />
+      <stop offset="1" stop-color="#0c4f54" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="180" cy="160" r="200" fill="#ffffff" opacity="0.05" />
+  <!-- rising search-ranking chart -->
+  <polygon points="540,470 640,420 740,440 840,350 940,300 1040,210 1040,540 540,540" fill="#ffffff" opacity="0.12" />
+  <polyline points="540,470 640,420 740,440 840,350 940,300 1040,210" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <g fill="#ffd166">
+    <circle cx="640" cy="420" r="8" />
+    <circle cx="840" cy="350" r="8" />
+    <circle cx="1040" cy="210" r="10" />
+  </g>
+  <!-- magnifying glass -->
+  <g stroke="#ffffff" stroke-width="14" fill="none" opacity="0.95">
+    <circle cx="930" cy="170" r="78" />
+    <line x1="985" y1="226" x2="1060" y2="300" stroke-linecap="round" />
+  </g>
+  <!-- location pins (BE / CH) -->
+  <g fill="#ffd166" opacity="0.95">
+    <path d="M650 330 c0 26 -28 44 -28 70 c0 0 28 18 28 -70 z" opacity="0" />
+    <path d="M636 332 a26 26 0 1 1 -0.1 0 z" />
+    <path d="M636 384 l-18 -26 a26 26 0 0 0 36 0 z" />
+    <circle cx="636" cy="354" r="9" fill="#0c4f54" />
+  </g>
+  <g fill="#ffffff" opacity="0.85">
+    <path d="M780 252 a22 22 0 1 1 -0.1 0 z" />
+    <path d="M780 298 l-15 -22 a22 22 0 0 0 30 0 z" />
+    <circle cx="780" cy="274" r="7" fill="#0c4f54" />
+  </g>
+</svg>

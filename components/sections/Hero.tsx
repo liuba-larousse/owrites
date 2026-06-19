@@ -79,7 +79,7 @@ export default function Hero() {
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="rounded-md bg-white border border-gray-200 px-8 py-1 text-xs text-gray-400">
-                  owrites.com/dashboard
+                  owrites.co/dashboard
                 </div>
               </div>
             </div>

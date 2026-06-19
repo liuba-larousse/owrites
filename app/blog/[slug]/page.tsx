@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, Tag, Calendar, Share2 } from "lucide-react";
 import { getBlogPost, getBlogPosts, formatDate } from "@/lib/blog";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME } from "@/lib/config";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -14,12 +16,14 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) return { title: "Article introuvable" };
 
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -27,6 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.publishedAt,
       authors: [post.author.name],
       tags: post.tags,
+      url: `${SITE_URL}/blog/${post.slug}`,
     },
   };
 }
@@ -56,8 +61,9 @@ function renderMarkdown(content: string): string {
     .join("\n");
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
   const relatedPosts = getBlogPosts({ limit: 3 }).filter(
@@ -66,13 +72,58 @@ export default function BlogPostPage({ params }: Props) {
 
   const html = renderMarkdown(post.content);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    image: `${SITE_URL}${post.image}`,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${SITE_URL}/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="pt-16">
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Cover */}
-      <div
-        className={`h-64 lg:h-80 bg-gradient-to-br ${post.coverColor} flex items-end`}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
+      <div className="relative h-64 lg:h-80 flex items-end overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={post.image}
+          alt={post.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-white/70 text-sm hover:text-white transition-colors mb-6"
@@ -184,12 +235,14 @@ export default function BlogPostPage({ params }: Props) {
                   href={`/blog/${rp.slug}`}
                   className="group flex flex-col rounded-xl border border-gray-100 overflow-hidden hover:border-brand-200 hover:shadow-md transition-all"
                 >
-                  <div
-                    className={`h-28 bg-gradient-to-br ${rp.coverColor} flex items-center justify-center`}
-                  >
-                    <span className="text-white/20 text-5xl font-display font-bold">
-                      {rp.category.charAt(0)}
-                    </span>
+                  <div className="relative h-28 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={rp.image}
+                      alt={rp.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="p-4 bg-white flex-1">
                     <span className="text-xs text-brand-600 font-medium">

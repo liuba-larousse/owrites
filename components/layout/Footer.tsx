@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { LINKEDIN_URL } from "@/lib/config";
 
 const footerLinks = {
   services: {
@@ -53,29 +54,13 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-6">
               <a
-                href="https://linkedin.com"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition-colors"
-                aria-label="Twitter / X"
-              >
-                <Twitter size={16} />
-              </a>
-              <a
-                href="mailto:bonjour@owrites.com"
-                className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={16} />
               </a>
             </div>
           </div>

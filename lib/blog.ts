@@ -14,6 +14,7 @@ export interface BlogPost {
   publishedAt: string;
   readTime: string;
   coverColor: string;
+  image: string;
   featured?: boolean;
 }
 
@@ -27,14 +28,15 @@ export const blogPosts: BlogPost[] = [
     category: "Stratégie",
     tags: ["stratégie", "B2B", "leads", "contenu"],
     author: {
-      name: "Sophie Marchand",
-      role: "Stratège Contenu",
-      initials: "SM",
+      name: "Olaide Olaniyan",
+      role: "Fondateur, Owrites",
+      initials: "OO",
       color: "bg-brand-500",
     },
     publishedAt: "2025-03-12",
     readTime: "8 min",
     coverColor: "from-brand-600 to-brand-800",
+    image: "/blog/strategie-contenu-b2b-2025.svg",
     featured: true,
     content: `
 ## Introduction
@@ -99,14 +101,15 @@ Chez Owrites, nous avons accompagné des centaines d'entreprises francophones da
     category: "Intelligence Artificielle",
     tags: ["IA", "automatisation", "rédaction", "agent AI"],
     author: {
-      name: "Amina Khalidi",
-      role: "Head of AI",
-      initials: "AK",
-      color: "bg-emerald-500",
+      name: "Olaide Olaniyan",
+      role: "Fondateur, Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
     },
     publishedAt: "2025-03-05",
     readTime: "6 min",
     coverColor: "from-purple-600 to-purple-900",
+    image: "/blog/ia-redaction-contenu-entreprise.svg",
     featured: false,
     content: `
 ## L'IA comme collaborateur éditorial
@@ -153,14 +156,15 @@ L'agent IA Owrites se connecte à votre CMS via API REST standard. Il peut :
     category: "SEO",
     tags: ["SEO", "Belgique", "Suisse", "francophone", "local"],
     author: {
-      name: "Marc Steiner",
-      role: "Directeur Marché Suisse",
-      initials: "MS",
-      color: "bg-amber-500",
+      name: "Olaide Olaniyan",
+      role: "Fondateur, Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
     },
     publishedAt: "2025-02-28",
     readTime: "7 min",
     coverColor: "from-emerald-600 to-teal-800",
+    image: "/blog/seo-b2b-belgique-suisse.svg",
     featured: false,
     content: `
 ## Les particularités du SEO francophone
@@ -206,14 +210,15 @@ Le SEO dans la francophonie belge et suisse est une opportunité sous-exploitée
     category: "Email Marketing",
     tags: ["email", "copywriting", "automation", "conversion"],
     author: {
-      name: "Pierre-Antoine Lefèvre",
-      role: "Directeur Éditorial",
-      initials: "PL",
-      color: "bg-purple-500",
+      name: "Olaide Olaniyan",
+      role: "Fondateur, Owrites",
+      initials: "OO",
+      color: "bg-brand-500",
     },
     publishedAt: "2025-02-20",
     readTime: "5 min",
     coverColor: "from-rose-600 to-pink-800",
+    image: "/blog/copywriting-email-b2b-convertir.svg",
     featured: false,
     content: `
 ## Pourquoi l'email B2B reste le canal roi
