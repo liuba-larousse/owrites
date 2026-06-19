@@ -5,7 +5,7 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 import { getBlogPost, getBlogPosts, formatDate } from "@/lib/blog";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -14,16 +14,19 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) return { title: "Article introuvable" };
 
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `https://owrites.co/blog/${post.slug}`,
       publishedTime: post.publishedAt,
       authors: [post.author.name],
       tags: post.tags,
@@ -54,8 +57,9 @@ function renderMarkdown(content: string): string {
     .join("\n");
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
   const relatedPosts = getBlogPosts({ limit: 3 }).filter(
@@ -64,8 +68,55 @@ export default function BlogPostPage({ params }: Props) {
 
   const html = renderMarkdown(post.content);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Owrites",
+      url: "https://owrites.co",
+      logo: "https://owrites.co/images/owrites-logo.png",
+    },
+    image: "https://owrites.co/images/og-owrites-ghostwriter-linkedin.jpg",
+    mainEntityOfPage: `https://owrites.co/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://owrites.co" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://owrites.co/blog" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://owrites.co/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Cover */}
       <div
         className="h-64 lg:h-80 flex items-end"

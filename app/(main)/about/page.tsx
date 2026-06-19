@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "À propos — Owrites, Ghostwriter LinkedIn B2B France",
   description:
     "L'histoire d'Owrites, notre mission, nos valeurs et l'équipe derrière le premier service de ghostwriting LinkedIn B2B francophone.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

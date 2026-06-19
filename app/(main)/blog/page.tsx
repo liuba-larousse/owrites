@@ -7,14 +7,15 @@ export const metadata: Metadata = {
   title: "Blog LinkedIn B2B — Conseils Ghostwriting & Personal Branding",
   description:
     "Stratégie LinkedIn, ghostwriting B2B, personal branding et génération de leads. Conseils pratiques pour fondateurs et consultants francophones.",
+  alternates: { canonical: "/blog" },
 };
 
-export default function BlogPage({
+export default async function BlogPage({
   searchParams,
 }: {
-  searchParams?: { category?: string };
+  searchParams?: Promise<{ category?: string }>;
 }) {
-  const activeCategory = searchParams?.category;
+  const activeCategory = (await searchParams)?.category;
   const categories = getAllCategories();
   const posts = getBlogPosts({ category: activeCategory });
   const featured = getBlogPosts({ featured: true })[0];

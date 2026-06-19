@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://owrites.co"),
   title: {
     default: "Owrites — Ghostwriter LinkedIn B2B France | Génération de Leads & Personal Branding",
     template: "%s | Owrites",
@@ -44,10 +45,9 @@ export const metadata: Metadata = {
       "Ghostwriting LinkedIn pour fondateurs & consultants B2B. Leads qualifiés, personal branding, 100% organique.",
     images: ["https://owrites.co/images/og-owrites-ghostwriter-linkedin.jpg"],
   },
-  alternates: {
-    canonical: "https://owrites.co",
-    languages: { fr: "https://owrites.co" },
-  },
+  // NOTE: no site-wide `alternates.canonical` here — a root canonical is
+  // inherited by every page, which would tell Google all pages are duplicates
+  // of the homepage. Each page declares its own canonical instead.
 };
 
 export default function RootLayout({

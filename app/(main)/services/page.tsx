@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Services Ghostwriting LinkedIn B2B",
   description:
     "Ghostwriting LinkedIn, optimisation de profil, stratégie de contenu et génération de leads B2B pour fondateurs et consultants francophones.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

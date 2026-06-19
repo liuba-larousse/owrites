@@ -17,6 +17,11 @@ import FAQ from "@/components/sections/FAQ";
 import CalendlySection from "@/components/sections/CalendlySection";
 import CTAFinal from "@/components/sections/CTAFinal";
 import StickyCTA from "@/components/sections/StickyCTA";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
