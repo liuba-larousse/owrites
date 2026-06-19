@@ -43,7 +43,7 @@ export default function BlogArticlePage() {
               "@context": "https://schema.org",
               "@type": "Article",
               headline: "Combien coûte un ghostwriter LinkedIn en 2026 ? Ce que les fondateurs paient vraiment",
-              author: { "@type": "Person", name: "Olaide Olaniyan" },
+              author: { "@type": "Person", name: "Olaide Olaniyan", url: "https://www.linkedin.com/in/olaide-olaniyan-651596176/" },
               publisher: { "@type": "Organization", name: "Owrites", url: "https://owrites.co", logo: { "@type": "ImageObject", url: "https://owrites.co/images/owrites-logo.png" } },
               datePublished: "2026-01-01",
               dateModified: "2026-05-02",

@@ -44,7 +44,7 @@ export default function CaseStudyHostlyftPage() {
               "@context": "https://schema.org",
               "@type": "Article",
               headline: "Étude de cas : Comment le ghostwriting LinkedIn a généré des leads STR qualifiés en 90 jours",
-              author: { "@type": "Person", name: "Olaide Olaniyan" },
+              author: { "@type": "Person", name: "Olaide Olaniyan", url: "https://www.linkedin.com/in/olaide-olaniyan-651596176/" },
               publisher: { "@type": "Organization", name: "Owrites", url: "https://owrites.co", logo: { "@type": "ImageObject", url: "https://owrites.co/images/owrites-logo.png" } },
               datePublished: "2026-01-01",
               dateModified: "2026-05-02",

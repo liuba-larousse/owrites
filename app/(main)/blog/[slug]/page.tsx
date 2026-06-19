@@ -79,6 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
       "@type": "Person",
       name: post.author.name,
       jobTitle: post.author.role,
+      url: "https://www.linkedin.com/in/olaide-olaniyan-651596176/",
     },
     publisher: {
       "@type": "Organization",
